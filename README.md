@@ -57,3 +57,12 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[alu01
 	Finished in 0.00006 seconds (files took 0.18351 seconds to load)
 	0 examples, 0 failures, 1 error occurred outside of examples
 
+
+--[X] Prueba 2. Pasada prueba clase funcion
+	
+	Granja
+        Tiene un número de version, usando la sintaxis semántica 0.1.0
+
+	Finished in 0.00236 seconds (files took 0.14285 seconds to load)
+	1 example, 0 failures
+
