@@ -16,4 +16,6 @@ module Granja
     end
 
   end
+  class Datos
+  end
 end
