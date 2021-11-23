@@ -158,3 +158,16 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[alu01
 	Finished in 0.00402 seconds (files took 0.15468 seconds to load)
 	5 examples, 1 failure
 
+--[X] Prueba8. Pasada atributo reproduccion animal
+
+	Granja
+        Tiene un número de version, usando la sintaxis semántica 0.1.0
+        Granja::Funcion
+        Tiene una clase para almacenar las funcionalidades
+        Tiene un atributo para las condiciones de vida de los animales
+        Tiene un atributo para los cuidados de los animanles
+        Tiene un atributo para la reproduccion de los animales
+
+	Finished in 0.0037 seconds (files took 0.14572 seconds to load)
+	5 examples, 0 failures
+
