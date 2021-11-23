@@ -60,6 +60,13 @@ RSpec.describe Granja do
       expect(Granja::Datos.new("","","FarmerC").tipo).to eq("FarmerC")
 
     end
+    it "Tiene un atributo para la descripcion de granja" do
+      expect(Granja::Datos.new("","","","Farmer").descripcion).to eq("Farmer")
+      expect(Granja::Datos.new("","","","FarmerA").descripcion).to eq("FarmerA")
+      expect(Granja::Datos.new("","","","FarmerB").descripcion).to eq("FarmerB")
+      expect(Granja::Datos.new("","","","FarmerC").descripcion).to eq("FarmerC")
+
+    end
 
 
 
