@@ -38,4 +38,22 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/[alu0101329161]/granja.
 
-##Correccion de la versión de la GEMA
+## Correccion de la versión de la GEMA
+
+
+--[X] Prueba 1. Fallo en la clase funcion
+
+	Failure/Error:
+	```ruby
+        describe Granja::Funcion do 
+        end
+	```
+
+	NameError:
+        uninitialized constant Granja::Funcion
+	\# ./spec/granja_spec.rb:5:in `block in <top (required)>'
+	\# ./spec/granja_spec.rb:1:in `<top (required)>'
+
+	Finished in 0.00006 seconds (files took 0.18351 seconds to load)
+	0 examples, 0 failures, 1 error occurred outside of examples
+
