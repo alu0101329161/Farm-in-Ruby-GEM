@@ -14,10 +14,10 @@ RSpec.describe Granja do
    
     end
     it "Tiene un atributo para los cuidados de los animanles" do
-      expect(Granja::Funcion.new("1").cuidados).to eq("1")
-      expect(Granja::Funcion.new("3").cuidados).to eq("3")
-      expect(Granja::Funcion.new("6").cuidados).to eq("6")
-      expect(Granja::Funcion.new("10").cuidados).to eq("10")
+      expect(Granja::Funcion.new("","1").cuidado).to eq("1")
+      expect(Granja::Funcion.new("","3").cuidado).to eq("3")
+      expect(Granja::Funcion.new("","6").cuidado).to eq("6")
+      expect(Granja::Funcion.new("","10").cuidado).to eq("10")
 
     end
 
