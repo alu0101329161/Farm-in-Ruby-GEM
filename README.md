@@ -131,3 +131,30 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[alu01
 	Finished in 0.00356 seconds (files took 0.17577 seconds to load)
 	4 examples, 0 failures
 
+--{X] Prueba7. Fallada atributo reproduccion animal
+
+	Granja
+        Tiene un número de version, usando la sintaxis semántica 0.1.0
+        Granja::Funcion
+        Tiene una clase para almacenar las funcionalidades
+        Tiene un atributo para las condiciones de vida de los animales
+        Tiene un atributo para los cuidados de los animanles
+        Tiene un atributo para la reproduccion de los animales (FAILED - 1)
+
+         Failures:
+
+         1) Granja Granja::Funcion Tiene un atributo para la reproduccion de los animales
+         Failure/Error:
+         def initialize(condicion_vida = "", cuidado = "")
+         @condicion_de_vida = condicion_vida
+         @cuidado = cuidado
+     
+        ArgumentError:
+        wrong number of arguments (given 3, expected 0..2)
+        # ./lib/granja.rb:8:in `initialize'
+        # ./spec/granja_spec.rb:24:in `new'
+        # ./spec/granja_spec.rb:24:in `block (3 levels) in <top (required)>'
+
+	Finished in 0.00402 seconds (files took 0.15468 seconds to load)
+	5 examples, 1 failure
+
