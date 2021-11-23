@@ -67,11 +67,13 @@ RSpec.describe Granja do
       expect(Granja::Datos.new("","","","FarmerC").descripcion).to eq("FarmerC")
 
     end
+    it "Tiene un atributo para poder impirmir" do
+      expect(Granja::Datos.new("1111","FARMERA","agricola","muy cara").to_s).to eq("la identificacion de la granja es: 1111 \n el nombre es: FARMERA \n , el tipo es: agricola \n y la descripcion es: muy cara")
+      expect(Granja::Datos.new("1001","FARMERB","regadio","muy barata").to_s).to eq("la identificacion de la granja es: 1001 \n el nombre es: FARMERB \n , el tipo es: regadio \n y la descripcion es: muy barata")
+      expect(Granja::Datos.new("1101","FARMERC","platano","fea").to_s).to eq("la identificacion de la granja es: 1101 \n el nombre es: FARMERC \n , el tipo es: platanera \n y la descripcion es: fea")
+      expect(Granja::Datos.new("0000","FARMERD","agricola","cara").to_s).to eq("la identificacion de la granja es: 0000 \n el nombre es: FARMERD \n , el tipo es: agricola \n y la descripcion es cara")
 
-
-
-
- 
+    end 
   end
 
 end
