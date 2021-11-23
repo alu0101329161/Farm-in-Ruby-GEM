@@ -377,3 +377,21 @@ Failures:
 	Finished in 0.00548 seconds (files took 0.15476 seconds to load)
 	10 examples, 1 failure
 
+--[X] Prueba18 Pasada prueba atributo de granja
+
+	Granja
+  Tiene un número de version, usando la sintaxis semántica 0.1.0
+  Granja::Funcion
+    Tiene una clase para almacenar las funcionalidades
+    Tiene un atributo para las condiciones de vida de los animales
+    Tiene un atributo para los cuidados de los animanles
+    Tiene un atributo para la reproduccion de los animales
+    Tiene un metodo para poder imprimir
+  Granja::Datos
+    Tiene una clase para almacenar los datos de la granja
+    Tiene un atributo para la identificacion de la granja
+    Tiene un atributo para el nombre de la granja
+    Tiene un atributo para el tipo de granja
+
+	Finished in 0.00558 seconds (files took 0.15584 seconds to load)
+	10 examples, 0 failures
