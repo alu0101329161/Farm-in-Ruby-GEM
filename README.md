@@ -219,3 +219,19 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[alu01
 	Finished in 0.00381 seconds (files took 0.141 seconds to load)
 	6 examples, 0 failures
 
+--[X] Prueba11. Fallada prueba de clase Datos
+
+	Failure/Error:
+        describe Granja::Datos do
+        it "Tiene una clase para almacenar los datos de la granja" do
+        expect(Granja::Datos.new()).not_to eq(nil)
+        end
+        end
+
+	NameError:
+  	uninitialized constant Granja::Datos
+  	Did you mean?  Data
+	# ./spec/granja_spec.rb:38:in `block in <top (required)>'
+	# ./spec/granja_spec.rb:1:in `<top (required)>'
+
+
