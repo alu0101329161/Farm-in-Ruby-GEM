@@ -34,6 +34,12 @@ RSpec.describe Granja do
       expect(Granja::Funcion.new("Mala","1","5").to_s).to eq("Las condiciones de vida de los animales son: Mala \n La calidad de los cuidados es 1 \n y el nivel de reproduccion es 5")
 
     end
+  end
+  describe Granja::Datos do
+    it "Tiene una clase para almacenar los datos de la granja" do
+      expect(Granja::Datos.new()).not_to eq(nil)
+    end
+
 
  
   end
