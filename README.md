@@ -68,4 +68,22 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[alu01
 	Finished in 0.00343 seconds (files took 0.14275 seconds to load)
 	2 examples, 0 failures
 
+--[X] Prueba3. Fallo atributo condicion de vida
+
+     Granja
+     Tiene un número de version, usando la sintaxis semántica 0.1.0
+     Granja::Funcion
+     Tiene una clase para almacenar las funcionalidades
+     Tiene un atributo para las condiciones de vida de los animales (FAILED - 1)
+
+     Failures:
+
+     1) Granja Granja::Funcion Tiene un atributo para las condiciones de vida de los animales
+     Failure/Error: expect(Granja::Funcion.new("Saludable").condicion_de_vida).not_to eq("Saludable")
+     
+     ArgumentError:
+       wrong number of arguments (given 1, expected 0)
+     # ./spec/granja_spec.rb:10:in `initialize'
+     # ./spec/granja_spec.rb:10:in `new'
+     # ./spec/granja_spec.rb:10:in `block (3 levels) in <top (required)>'
 
