@@ -87,3 +87,14 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[alu01
      # ./spec/granja_spec.rb:10:in `new'
      # ./spec/granja_spec.rb:10:in `block (3 levels) in <top (required)>'
 
+--[X] Prueba4. Pasada atributo condicion de vida
+
+	Granja
+        Tiene un número de version, usando la sintaxis semántica 0.1.0
+        Granja::Funcion
+        Tiene una clase para almacenar las funcionalidades
+        Tiene un atributo para las condiciones de vida de los animales
+
+	Finished in 0.00345 seconds (files took 0.1548 seconds to load)
+	3 examples, 0 failures
+
