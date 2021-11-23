@@ -11,8 +11,9 @@ module Granja
       @reproduccion = reproduccion
     end 
 
-
-
+    def to_s
+      "Las condiciones de vida de los animales son: #{@condicion_de_vida} \n La calidad de los cuidados es #{@cuidado} \n y el nivel de reproduccion es #{@reproduccion}"
+    end
 
   end
 end
