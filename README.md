@@ -98,3 +98,24 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[alu01
 	Finished in 0.00345 seconds (files took 0.1548 seconds to load)
 	3 examples, 0 failures
 
+--[X] Prueba5. Fallo atributo cuidado animal
+
+	Granja
+        Tiene un número de version, usando la sintaxis semántica 0.1.0
+        Granja::Funcion
+        Tiene una clase para almacenar las funcionalidades
+        Tiene un atributo para las condiciones de vida de los animales
+        Tiene un atributo para los cuidados de los animanles (FAILED - 1)
+
+        Failures:
+
+        1) Granja Granja::Funcion Tiene un atributo para los cuidados de los animanles
+        Failure/Error: expect(Granja::Funcion.new("1").cuidados).to eq("1")
+     
+        NoMethodError:
+        undefined method `cuidados' for #<Granja::Funcion:0x000056155ef5f310 @condicion_de_vida="1">
+        # ./spec/granja_spec.rb:17:in `block (3 levels) in <top (required)>'
+
+	Finished in 0.00372 seconds (files took 0.15275 seconds to load)
+	4 examples, 1 failure
+
