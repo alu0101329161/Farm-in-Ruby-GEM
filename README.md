@@ -448,3 +448,45 @@ Failures:
     Tiene un atributo para el nombre de la granja
     Tiene un atributo para el tipo de granja
     Tiene un atribut
+
+--[X] Prueba 21 Fallada prueba atributo descripcion
+
+	Granja
+  Tiene un número de version, usando la sintaxis semántica 0.1.0
+  Granja::Funcion
+    Tiene una clase para almacenar las funcionalidades
+    Tiene un atributo para las condiciones de vida de los animales
+    Tiene un atributo para los cuidados de los animanles
+    Tiene un atributo para la reproduccion de los animales
+    Tiene un metodo para poder imprimir
+  Granja::Datos
+    Tiene una clase para almacenar los datos de la granja
+    Tiene un atributo para la identificacion de la granja
+    Tiene un atributo para el nombre de la granja
+    Tiene un atributo para el tipo de granja
+    Tiene un atributo para la descripcion de granja
+    Tiene un atributo para poder impirmir (FAILED - 1)
+
+Failures:
+
+  1) Granja Granja::Datos Tiene un atributo para poder impirmir
+     Failure/Error: expect(Granja::Datos.new("1111","FARMERA","agricola","muy cara").to_s).to eq("la identificacion de la granja es: 1111 \n el nombre es: FARMERA \n , el tipo es: agricola \n y la descripcion es: muy cara")
+     
+       expected: "la identificacion de la granja es: 1111 \n el nombre es: FARMERA \n , el tipo es: agricola \n y la descripcion es: muy cara"
+            got: "#<Granja::Datos:0x0000564b488b50f8>"
+     
+       (compared using ==)
+     
+       Diff:
+       @@ -1,5 +1,2 @@
+       -la identificacion de la granja es: 1111 
+       - el nombre es: FARMERA 
+       - , el tipo es: agricola 
+       - y la descripcion es: muy cara
+       +#<Granja::Datos:0x0000564b488b50f8>
+       
+     # ./spec/granja_spec.rb:71:in `block (3 levels) in <top (required)>'
+
+	Finished in 0.02531 seconds (files took 0.14644 seconds to load)
+	12 examples, 1 failure
+
