@@ -13,6 +13,14 @@ RSpec.describe Granja do
       expect(Granja::Funcion.new("Mala").condicion_de_vida).to eq("Mala")
    
     end
+    it "Tiene un atributo para los cuidados de los animanles" do
+      expect(Granja::Funcion.new("1").cuidados).to eq("1")
+      expect(Granja::Funcion.new("3").cuidados).to eq("3")
+      expect(Granja::Funcion.new("6").cuidados).to eq("6")
+      expect(Granja::Funcion.new("10").cuidados).to eq("10")
+
+    end
+
  
   end
 
