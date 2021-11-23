@@ -250,3 +250,31 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[alu01
 	Finished in 0.00515 seconds (files took 0.14847 seconds to load)
 	7 examples, 0 failures
 
+--[X] Prueba 13 Fallada prueba de atributo identificacion
+
+	Granja
+  Tiene un número de version, usando la sintaxis semántica 0.1.0
+  Granja::Funcion
+    Tiene una clase para almacenar las funcionalidades
+    Tiene un atributo para las condiciones de vida de los animales
+    Tiene un atributo para los cuidados de los animanles
+    Tiene un atributo para la reproduccion de los animales
+    Tiene un metodo para poder imprimir
+  Granja::Datos
+    Tiene una clase para almacenar los datos de la granja
+    Tiene un atributo para la identificacion de la granja (FAILED - 1)
+
+        Failures:
+
+        1) Granja Granja::Datos Tiene un atributo para la identificacion de la granja
+         Failure/Error: expect(Granja::Datos.new("Farmer").identificacion).to eq("Farmer")
+     
+        ArgumentError:
+        wrong number of arguments (given 1, expected 0)
+        # ./spec/granja_spec.rb:43:in `initialize'
+        # ./spec/granja_spec.rb:43:in `new'
+        # ./spec/granja_spec.rb:43:in `block (3 levels) in <top (required)>'
+
+	Finished in 0.00482 seconds (files took 0.15429 seconds to load)
+	8 examples, 1 failure
+
