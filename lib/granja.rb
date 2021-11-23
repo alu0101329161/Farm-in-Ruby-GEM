@@ -17,10 +17,11 @@ module Granja
 
   end
   class Datos
-    attr_reader :identificacion
+    attr_reader :identificacion, :nombre
     #Constructor de la clase Funcion
-    def initialize(identificacion = "")
+    def initialize(identificacion = "", nombre = "")
       @identificacion = identificacion
+      @nombre = nombre
     end
 
   end
