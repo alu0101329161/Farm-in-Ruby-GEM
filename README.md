@@ -344,3 +344,36 @@ Failures:
 	Finished in 0.00507 seconds (files took 0.15177 seconds to load)
 	9 examples, 0 failures
 
+--[X] Prueba 17. Fallada prueba de atributo tipo de granja
+
+	Granja
+  Tiene un número de version, usando la sintaxis semántica 0.1.0
+  Granja::Funcion
+    Tiene una clase para almacenar las funcionalidades
+    Tiene un atributo para las condiciones de vida de los animales
+    Tiene un atributo para los cuidados de los animanles
+    Tiene un atributo para la reproduccion de los animales
+    Tiene un metodo para poder imprimir
+  Granja::Datos
+    Tiene una clase para almacenar los datos de la granja
+    Tiene un atributo para la identificacion de la granja
+    Tiene un atributo para el nombre de la granja
+    Tiene un atributo para el tipo de granja (FAILED - 1)
+
+Failures:
+
+  1) Granja Granja::Datos Tiene un atributo para el tipo de granja
+     Failure/Error:
+       def initialize(identificacion = "", nombre = "")
+         @identificacion = identificacion
+         @nombre = nombre
+     
+        ArgumentError:
+        wrong number of arguments (given 3, expected 0..2)
+        # ./lib/granja.rb:22:in `initialize'
+        # ./spec/granja_spec.rb:57:in `new'
+        # ./spec/granja_spec.rb:57:in `block (3 levels) in <top (required)>'
+
+	Finished in 0.00548 seconds (files took 0.15476 seconds to load)
+	10 examples, 1 failure
+
