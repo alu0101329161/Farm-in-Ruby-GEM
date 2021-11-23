@@ -205,3 +205,17 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[alu01
 	6 examples, 1 failure
 
 
+--[X] Prueba10. Aprobada prueba metodo to_s
+	
+	Granja
+        Tiene un número de version, usando la sintaxis semántica 0.1.0
+        Granja::Funcion
+        Tiene una clase para almacenar las funcionalidades
+        Tiene un atributo para las condiciones de vida de los animales
+        Tiene un atributo para los cuidados de los animanles
+        Tiene un atributo para la reproduccion de los animales
+        Tiene un metodo para poder imprimir
+
+	Finished in 0.00381 seconds (files took 0.141 seconds to load)
+	6 examples, 0 failures
+
