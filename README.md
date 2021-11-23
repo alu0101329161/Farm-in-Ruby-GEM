@@ -278,3 +278,20 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[alu01
 	Finished in 0.00482 seconds (files took 0.15429 seconds to load)
 	8 examples, 1 failure
 
+--[X] Prueba14 Pasada prueba de atributo identificacion
+
+	Granja
+  Tiene un número de version, usando la sintaxis semántica 0.1.0
+  Granja::Funcion
+    Tiene una clase para almacenar las funcionalidades
+    Tiene un atributo para las condiciones de vida de los animales
+    Tiene un atributo para los cuidados de los animanles
+    Tiene un atributo para la reproduccion de los animales
+    Tiene un metodo para poder imprimir
+  Granja::Datos
+    Tiene una clase para almacenar los datos de la granja
+    Tiene un atributo para la identificacion de la granja
+
+	Finished in 0.00474 seconds (files took 0.14348 seconds to load)
+	8 examples, 0 failures
+
