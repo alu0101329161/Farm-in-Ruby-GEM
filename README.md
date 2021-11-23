@@ -171,3 +171,37 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[alu01
 	Finished in 0.0037 seconds (files took 0.14572 seconds to load)
 	5 examples, 0 failures
 
+--[X] Prueba9. Fallada prueba metodo to_S
+	
+	Granja
+       Tiene un número de version, usando la sintaxis semántica 0.1.0
+       Granja::Funcion
+       Tiene una clase para almacenar las funcionalidades
+       Tiene un atributo para las condiciones de vida de los animales
+       Tiene un atributo para los cuidados de los animanles
+       Tiene un atributo para la reproduccion de los animales
+       Tiene un metodo para poder imprimir (FAILED - 1)
+
+       Failures:
+
+       1) Granja Granja::Funcion Tiene un metodo para poder imprimir
+       Failure/Error: expect(Granja::Funcion.new("Saludables","Buena","10").to_s).to eq("Las condiciones de vida de los animales son: Saludable \n La calidad de los cuidados es Buena \n y el nivel de reproduccion es 10")
+     
+       expected: "Las condiciones de vida de los animales son: Saludable \n La calidad de los cuidados es Buena \n y el nivel de reproduccion es 10"
+            got: "#<Granja::Funcion:0x000055ddac7a5eb0>"
+     
+       (compared using ==)
+     
+       Diff:
+       @@ -1,4 +1,2 @@
+       -Las condiciones de vida de los animales son: Saludable 
+       - La calidad de los cuidados es Buena 
+       - y el nivel de reproduccion es 10
+       +#<Granja::Funcion:0x000055ddac7a5eb0>
+       
+        # ./spec/granja_spec.rb:31:in `block (3 levels) in <top (required)>'
+
+	Finished in 0.03462 seconds (files took 0.15347 seconds to load)
+	6 examples, 1 failure
+
+
