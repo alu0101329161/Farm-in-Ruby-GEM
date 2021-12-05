@@ -791,3 +791,31 @@ Granja
       Se espera que una instancia de la clase Ganado sea un objeto basico
       No se espera que una instancia de la clase Ganado sea una cadena
       No se espera que una instancia de la clase Ganado sea un numero
+
+--[X] Prueba 46 Fallada prueba contador clase Animal
+
+Failures:
+
+  1) Granja Animal Atributos de la clase Animal El Numero de animales instanciados es
+     Failure/Error: expect(Animal.count).to eq(4)
+     
+     NoMethodError:
+       undefined method `count' for Animal:Class
+     # ./spec/animal_spec.rb:46:in `block (4 levels) in <top (required)>'
+
+Finished in 0.01352 seconds (files took 0.15638 seconds to load)
+35 examples, 1 failure
+
+--[X] Prueba 47 Pasada prueba contador clase Animal
+
+Granja
+  Animal
+    Atributos de la clase Animal
+      Tiene una clase para representar animales
+      Tiene un atributo para identificar al animal
+      Tiene un atributo con la edad del animal en dias
+      Tiene un atributo con el sexo del animal
+      Tiene un atributo con el peso del animal en gramos
+      Se obtiene una cadena con la informacion del animal correctamente formateada
+      El Numero de animales instanciados es
+
