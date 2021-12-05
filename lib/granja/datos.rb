@@ -7,10 +7,15 @@
     # @note se aceptan 4 parametros de cualquier tipo
     # @return inicializa atributos
     def initialize(identificacion = "", nombre = "", tipo = "", descripcion = "")
+
+      if(tipo == "avicola" || tipo == "ganadera")
+        @tipo = tipo
+      else
+        return nil
+      end
+      @descripcion = descripcion
       @identificacion = identificacion
       @nombre = nombre
-      @tipo = tipo
-      @descripcion = descripcion
     end
 
     # Metodo para convertir en string
