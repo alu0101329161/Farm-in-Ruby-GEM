@@ -668,3 +668,22 @@ Granja
       No se espera que una instancia de la clase Animal sea un numero
 
       
+--[X] Prueba 35 Fallada prueba clase Ganado
+
+Failure/Error:
+      describe Ganado do
+  
+          context "Atributos de la clase Ganado" do
+              it "Tiene una clase para representar ganado" do
+                  expect(Ganado.new()).not_to eq(nil)
+              end
+          end
+
+--[X] Prueba 36 Pasada prueba clase Ganado
+
+Granja
+  Ganado
+    Atributos de la clase Ganado
+      Tiene una clase para representar ganado
+
+      
