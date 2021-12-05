@@ -630,3 +630,33 @@ Granja
       Tiene un atributo con el sexo del animal
       Tiene un atributo con el peso del animal en gramos
 
+--[X] Prueba 32 Fallada prueba metodo to_s Animal
+
+Failures:
+
+  1) Granja Animal Atributos de la clase Animal Tiene un metodo para poder imprimir
+     Failure/Error: expect(@test1.to_s).to eq("El animal 1111 con 284 dias de vida es macho con un peso de 9000 gramos")
+     
+       expected: "El animal 1111 con 284 dias de vida es macho con un peso de 9000 gramos"
+            got: "#<Animal:0x00005646c11133a8>"
+     
+       (compared using ==)
+     # ./spec/animal_spec.rb:40:in `block (4 levels) in <top (required)>'
+
+Finished in 0.02806 seconds (files took 0.15359 seconds to load)
+18 examples, 1 failure
+
+--[X] Prueba 33 Pasada prueba metodo to_s Animal
+
+Granja
+  Animal
+    Atributos de la clase Animal
+      Tiene una clase para representar animales
+      Tiene un atributo para identificar al animal
+      Tiene un atributo con la edad del animal en dias
+      Tiene un atributo con el sexo del animal
+      Tiene un atributo con el peso del animal en gramos
+      Tiene un metodo para poder imprimir
+
+
+
