@@ -781,3 +781,13 @@ Granja
       Tiene un atributo para el tipo de aprovechamiento
       Tiene un atributo para su tipo de alimentacion
       Se obtiene una cadena con la informacion del ganado correctamente formateada
+
+--[X] Prueba 45 Pasada prueba Herencia clase Ganado
+
+    Herencia de la clase Ganado
+      Se espera que una instancia de la clase Ganado sea un Ganado
+      Se espera que una instancia de la clase Ganado sea un Animal
+      Se espera que una instancia de la clase Ganado sea un objeto
+      Se espera que una instancia de la clase Ganado sea un objeto basico
+      No se espera que una instancia de la clase Ganado sea una cadena
+      No se espera que una instancia de la clase Ganado sea un numero
