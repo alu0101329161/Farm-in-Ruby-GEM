@@ -855,7 +855,7 @@ Failures:
 Finished in 0.01634 seconds (files took 0.15891 seconds to load)
 40 examples, 4 failures
 
---[X] Prueba 48 Pasada prueba comparable clase Animal
+--[X] Prueba 49 Pasada prueba comparable clase Animal
 
     Comparable
       animal1 < animal2
@@ -864,4 +864,91 @@ Finished in 0.01634 seconds (files took 0.15891 seconds to load)
       animal1 >= animal2
       animal1 == animal2
 
+--[X] Prueba 50 Fallada prueba comparable clase Ganado
+
+Failures:
+
+  1) Granja Ganado Comparable ganado1 < ganado2
+     Failure/Error: expect(@test1 < @test2).to eq(true)
+     
+       expected: true
+            got: false
+     
+       (compared using ==)
+     
+       Diff:
+       @@ -1 +1 @@
+       -true
+       +false
+       
+     # ./spec/ganado_spec.rb:82:in `block (4 levels) in <top (required)>'
+
+  2) Granja Ganado Comparable ganado1 <= ganado2
+     Failure/Error: expect(@test4 < @test1).to eq(true)
+     
+       expected: true
+            got: false
+     
+       (compared using ==)
+     
+       Diff:
+       @@ -1 +1 @@
+       -true
+       +false
+       
+     # ./spec/ganado_spec.rb:87:in `block (4 levels) in <top (required)>'
+
+  3) Granja Ganado Comparable ganado1 > ganado2
+     Failure/Error: expect(@test2 > @test1).to eq(true)
+     
+       expected: true
+            got: false
+     
+       (compared using ==)
+     
+       Diff:
+       @@ -1 +1 @@
+       -true
+       +false
+       
+     # ./spec/ganado_spec.rb:90:in `block (4 levels) in <top (required)>'
+
+  4) Granja Ganado Comparable ganado1 >= ganado2
+     Failure/Error: expect(@test1 > @test4).to eq(true)
+     
+       expected: true
+            got: false
+     
+       (compared using ==)
+     
+       Diff:
+       @@ -1 +1 @@
+       -true
+       +false
+       
+     # ./spec/ganado_spec.rb:95:in `block (4 levels) in <top (required)>'
+
+  5) Granja Ganado Comparable ganado1 == ganado2
+     Failure/Error: expect(@test3 == @test4).to eq(false)
+     
+       expected: false
+            got: true
+     
+       (compared using ==)
+     
+       Diff:
+       @@ -1 +1 @@
+       -false
+       +true
+       
+     # ./spec/ganado_spec.rb:98:in `block (4 levels) in <top (required)>'
+
+--[X] Prueba 51 Pasada prueba comparable clase Ganado
+
+    Comparable
+      ganado1 < ganado2
+      ganado1 <= ganado2
+      ganado1 > ganado2
+      ganado1 >= ganado2
+      ganado1 == ganado2
       
