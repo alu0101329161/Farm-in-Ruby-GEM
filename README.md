@@ -528,4 +528,11 @@ Failures:
 NameError:
   uninitialized constant Animal
 
+--[X] Prueba 24 Pasada prueba clase Animal
+
+Granja
+  Animal
+    Atributos de la clase Animal
+      Tiene una clase para representar animales
+
 
