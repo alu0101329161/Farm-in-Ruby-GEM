@@ -42,6 +42,9 @@ RSpec.describe Granja do
             expect(@test3.to_s).to eq("El animal 3333 con 286 dias de vida es hembra con un peso de 7000 gramos")
             expect(@test4.to_s).to eq("El animal 4444 con 287 dias de vida es hembra con un peso de 5000 gramos")
         end
+        it "El Numero de animales instanciados es" do
+          expect(Animal.count).to eq(29)
+        end
 
       end
 
