@@ -8,4 +8,8 @@ class Animal
         @sexo = sexo
         @peso = peso
     end
+
+    def to_s
+        "El animal #{@identificador} con #{@edad} dias de vida es #{@sexo} con un peso de #{@peso} gramos"
+    end
 end
