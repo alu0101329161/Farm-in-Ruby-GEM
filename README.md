@@ -952,3 +952,12 @@ Failures:
       ganado1 >= ganado2
       ganado1 == ganado2
       
+--[X] Prueba 52 Herencia clase Datos
+
+    Herencia de la clase Datos
+      Se espera que una instancia de la clase Ganado sea un Ganado
+      Se espera que una instancia de la clase Ganado sea un objeto
+      Se espera que una instancia de la clase Ganado sea un objeto basico
+      No se espera que una instancia de la clase Ganado sea una cadena
+      No se espera que una instancia de la clase Ganado sea un numero
+
