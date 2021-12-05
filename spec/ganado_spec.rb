@@ -39,8 +39,42 @@ RSpec.describe Granja do
         end
 
         context "Herencia de la clase Ganado" do
-
+            it "Se espera que una instancia de la clase Ganado sea un Ganado" do
+                expect(@test1.is_a? Ganado).to eq(true)
+                expect(@test2.is_a? Ganado).to eq(true)
+                expect(@test3.is_a? Ganado).to eq(true)
+                expect(@test4.is_a? Ganado).to eq(true)
+            end
+            it "Se espera que una instancia de la clase Ganado sea un Animal" do
+                expect(@test1.is_a? Animal).to eq(true)
+                expect(@test2.is_a? Animal).to eq(true)
+                expect(@test3.is_a? Animal).to eq(true)
+                expect(@test4.is_a? Animal).to eq(true)
+            end
+            it "Se espera que una instancia de la clase Ganado sea un objeto" do
+                expect(@test1.is_a? Object).to eq(true)
+                expect(@test2.is_a? Object).to eq(true)
+                expect(@test3.is_a? Object).to eq(true)
+                expect(@test4.is_a? Object).to eq(true)
+            end
+            it "Se espera que una instancia de la clase Ganado sea un objeto basico " do
+                expect(@test1.is_a? BasicObject).to eq(true)
+                expect(@test2.is_a? BasicObject).to eq(true)
+                expect(@test3.is_a? BasicObject).to eq(true)
+                expect(@test4.is_a? BasicObject).to eq(true)
+            end
+            it "No se espera que una instancia de la clase Ganado sea una cadena" do
+                expect(@test1.is_a? String).to eq(false)
+                expect(@test2.is_a? String).to eq(false)
+                expect(@test3.is_a? String).to eq(false)
+                expect(@test3.is_a? String).to eq(false)
+            end
+            it "No se espera que una instancia de la clase Ganado sea un numero" do
+                expect(@test1.is_a? Numeric).to eq(false)
+                expect(@test2.is_a? Numeric).to eq(false)
+                expect(@test3.is_a? Numeric).to eq(false)
+                expect(@test4.is_a? Numeric).to eq(false)
+            end
         end
-
     end
 end
