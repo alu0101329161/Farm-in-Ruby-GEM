@@ -961,3 +961,19 @@ Failures:
       No se espera que una instancia de la clase Ganado sea una cadena
       No se espera que una instancia de la clase Ganado sea un numero
 
+--[X] Prueba 53 Arreglo modulo Funcion
+
+Granja
+  Funcion
+    Componentes del modulo Funcion
+      Existe un modulo para almacenar las funcionalidades
+      Existe una constante para representar las condiciones de vida
+      Existe un procedimiento para establecer los cuidados de los animales
+      Existe un procedimiento para establecer la reproduccion de los animales
+    Herencia del modulo Funcion
+      Se espera que sea un objeto de la clase Module
+      Se espera que sea un objeto (Object)
+      Se espera que sea un objeto basico (BasicObject)
+      No se espera que sea una instancia de la clase que representa una cadena (String)
+      No se espera que sea una instancia de la clase que representa un numero (Numeric)
+
