@@ -755,3 +755,29 @@ Granja
       Tiene un atributo para el tipo de aprovechamiento
       Tiene un atributo para su tipo de alimentacion
 
+--[X] Prueba 43 Fallada prueba metodo to_s Ganado
+
+Failures:
+
+  1) Granja Ganado Atributos de la clase Ganado Se obtiene una cadena con la informacion del ganado correctamente formateada
+     Failure/Error: expect(@test1.to_s).to eq("La cabeza de ganado de raza bovino con aprovechamiento tipo carne y herbívoro")
+     
+       expected: "La cabeza de ganado de raza bovino con aprovechamiento tipo carne y herbívoro"
+            got: "El animal 0 con 0 dias de vida es  con un peso de 0 gramos"
+     
+       (compared using ==)
+     # ./spec/ganado_spec.rb:34:in `block (4 levels) in <top (required)>'
+
+Finished in 0.03177 seconds (files took 0.15475 seconds to load)
+28 examples, 1 failure
+
+--[X] Prueba 44 Pasada prueba metodo to_s Ganado
+
+Granja
+  Ganado
+    Atributos de la clase Ganado
+      Tiene una clase para representar ganado
+      Tiene un atributo para la raza
+      Tiene un atributo para el tipo de aprovechamiento
+      Tiene un atributo para su tipo de alimentacion
+      Se obtiene una cadena con la informacion del ganado correctamente formateada
