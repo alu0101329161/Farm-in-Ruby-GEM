@@ -512,4 +512,20 @@ Failures:
 	Finished in 0.00519 seconds (files took 0.14191 seconds to load)
 	12 examples, 0 failures
 
+--[X] Prueba 23 Fallada prueba clase Animal
+
+  Failure/Error:
+      describe Animal do
+          
+        context "Atributos de la clase Animal" do
+          it "Tiene una clase para representar animales" do
+              expect(Animal.new()).not_to eq(nil)
+          end
+  
+        end
+        context "Herencia de la clase Animal" do
+
+NameError:
+  uninitialized constant Animal
+
 
