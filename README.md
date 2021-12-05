@@ -819,3 +819,49 @@ Granja
       Se obtiene una cadena con la informacion del animal correctamente formateada
       El Numero de animales instanciados es
 
+--[X] Prueba 48 Fallada prueba comparable clase Animal
+
+Failures:
+
+  1) Granja Animal Comparable animal1 < animal2
+     Failure/Error: expect(@test1 < @test2).to eq(true)
+     
+     NoMethodError:
+       undefined method `<' for #<Animal:0x0000563f964bf4c0>
+     # ./spec/animal_spec.rb:86:in `block (4 levels) in <top (required)>'
+
+  2) Granja Animal Comparable animal1 <= animal2
+     Failure/Error: expect(@test1 <= @test2).to eq(true)
+     
+     NoMethodError:
+       undefined method `<=' for #<Animal:0x0000563f964bde40>
+       Did you mean?  <=>
+     # ./spec/animal_spec.rb:90:in `block (4 levels) in <top (required)>'
+
+  3) Granja Animal Comparable animal1 > animal2
+     Failure/Error: expect(@test2 > @test1).to eq(true)
+     
+     NoMethodError:
+       undefined method `>' for #<Animal:0x0000563f964b7ea0>
+     # ./spec/animal_spec.rb:94:in `block (4 levels) in <top (required)>'
+
+  4) Granja Animal Comparable animal1 >= animal2
+     Failure/Error: expect(@test3 >= @test4).to eq(true)
+     
+     NoMethodError:
+       undefined method `>=' for #<Animal:0x0000563f964b5fb0>
+     # ./spec/animal_spec.rb:98:in `block (4 levels) in <top (required)>'
+
+Finished in 0.01634 seconds (files took 0.15891 seconds to load)
+40 examples, 4 failures
+
+--[X] Prueba 48 Pasada prueba comparable clase Animal
+
+    Comparable
+      animal1 < animal2
+      animal1 <= animal2
+      animal1 > animal2
+      animal1 >= animal2
+      animal1 == animal2
+
+      
