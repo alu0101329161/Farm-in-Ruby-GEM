@@ -658,5 +658,13 @@ Granja
       Tiene un atributo con el peso del animal en gramos
       Tiene un metodo para poder imprimir
 
+--[X] Prueba 34 Pasada prueba herencia animal
 
+    Herencia de la clase Animal
+      Se espera que una instancia de la clase Animal sea un Animal
+      Se espera que una instancia de la clase Animal sea un objeto
+      Se espera que una instancia de la clase Animal sea un objeto b´asico
+      No se espera que una instancia de la clase Animal sea una cadena
+      No se espera que una instancia de la clase Animal sea un numero
 
+      
