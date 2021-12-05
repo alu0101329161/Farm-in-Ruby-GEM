@@ -1,21 +1,22 @@
-# Clase para almacenar funcionalidades de la granja
-class Funcion
+# Modulo para almacenar funcionalidades de la granja
+module Funcion
 
-  # @overload ggeter de los atributos
-  attr_reader :condicion_de_vida, :cuidado, :reproduccion
-  
-  # Metodo para inicializar atrubutos de la clase Funcion
-  # @note acepta 3 parametro de cualquier tipo
-  # @return atributos de la clase
-  def initialize(condicion_vida = "", cuidado = "", reproduccion = "")
-    @condicion_de_vida = condicion_vida
-    @cuidado = cuidado
-    @reproduccion = reproduccion
-   end
- 
-   # Metodo para impirmir las variables de instancia
-   # @return String
-   def to_s
-     "Las condiciones de vida de los animales son: #{@condicion_de_vida} \n La calidad de los cuidados es #{@cuidado} \n y el nivel de reproduccion es #{@reproduccion}"
-   end
+  CONDICIONES_DE_VIDA = "campo abierto"
+
+  def self.cuidados(variable)
+    if(variable == 1) 
+      return "Cuidados tipo A"
+    else 
+      return "Cuidado tipo B"
+    end
+  end
+
+  def self.reproduccion(variable)
+    if(variable == 1) 
+      return "Reproduccion tipo A"
+    else 
+      return "Reproduccion tipo B"
+    end
+  end
+
 end
