@@ -10,7 +10,7 @@ RSpec.describe Granja do
 
       context "Atributos de la clase Animal" do
         it "Tiene una clase para representar animales" do
-            expect(Animal.new()).not_to eq(nil)
+            expect(Animal.new()).not_to be(nil)
         end
         it "Tiene un atributo para identificar al animal" do
             expect(@test1.identificador).to eq("1111")
@@ -80,5 +80,30 @@ RSpec.describe Granja do
             expect(@test4.is_a? Numeric).to eq(false)
         end
       end
+
+      context "Comparable" do
+        it "animal1 < animal2" do  
+            expect(@test1 < @test2).to eq(true)
+            expect(@test4 < @test1).to eq(true)
+        end
+        it "animal1 <= animal2" do  
+            expect(@test1 <= @test2).to eq(true)
+            expect(@test4 < @test1).to eq(true)
+        end
+        it "animal1 > animal2" do  
+            expect(@test2 > @test1).to eq(true)
+            expect(@test1 > @test4).to eq(true)
+        end
+        it "animal1 >= animal2" do  
+            expect(@test3 >= @test4).to eq(true)
+            expect(@test1 > @test4).to eq(true)
+        end
+        it "animal1 == animal2" do  
+            expect(@test3 == @test4).to eq(false)
+            expect(@test1 == @test4).to eq(false)
+        end
+      end
+
+
     end
 end

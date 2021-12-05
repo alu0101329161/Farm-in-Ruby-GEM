@@ -10,7 +10,7 @@ RSpec.describe Granja do
 
         context "Atributos de la clase Ganado" do
             it "Tiene una clase para representar ganado" do
-                expect(Ganado.new()).not_to eq(nil)
+                expect(Ganado.new()).not_to be(nil)
             end
             it "Tiene un atributo para la raza" do
                 expect(@test1.raza).to eq("bovino")

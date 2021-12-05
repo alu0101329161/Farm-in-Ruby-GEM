@@ -1,4 +1,5 @@
 class Animal
+    include Comparable
 
     attr_reader :identificador, :edad, :sexo, :peso
 
@@ -22,4 +23,8 @@ class Animal
     def self.count
         @@cantidad_animal
     end
+
+    def <=> other 
+		@peso <=> other.peso
+	end
 end
