@@ -686,4 +686,72 @@ Granja
     Atributos de la clase Ganado
       Tiene una clase para representar ganado
 
+--[X] Prueba 37 Fallada prueba atributo raza Ganado
       
+Failures:
+
+  1) Granja Ganado Atributos de la clase Ganado Tiene un atributo para la raza
+     Failure/Error: expect(@test1.raza).to eq("bovino")
+     
+     NoMethodError:
+       undefined method `raza' for #<Ganado:0x0000556c94462160>
+     # ./spec/ganado_spec.rb:16:in `block (4 levels) in <top (required)>'
+
+Finished in 0.01456 seconds (files took 0.16253 seconds to load)
+25 examples, 1 failure
+
+--[X] Prueba 38 Pasada prueba atributo raza Ganado
+
+Granja
+  Ganado
+    Atributos de la clase Ganado
+      Tiene una clase para representar ganado
+      Tiene un atributo para la raza
+
+--[X] Prueba 39 Fallada prueba atributo aprovechamiento Ganado
+
+Failures:
+
+  1) Granja Ganado Atributos de la clase Ganado Tiene un atributo para el tipo de aprovechamiento 
+     Failure/Error: expect(@test1.aprovechamiento).to eq("carne")
+     
+     NoMethodError:
+       undefined method `aprovechamiento' for #<Ganado:0x0000560eead96b70>
+     # ./spec/ganado_spec.rb:22:in `block (4 levels) in <top (required)>'
+
+Finished in 0.01127 seconds (files took 0.1487 seconds to load)
+26 examples, 1 failure
+
+--[X] Prueba 40 Pasada prueba atributo aprovechamiento Ganado
+
+Granja
+  Ganado
+    Atributos de la clase Ganado
+      Tiene una clase para representar ganado
+      Tiene un atributo para la raza
+      Tiene un atributo para el tipo de aprovechamiento
+
+--[X] Prueba 41 Fallada prueba atributo alimentacion Ganado
+
+Failures:
+
+  1) Granja Ganado Atributos de la clase Ganado Tiene un atributo para su tipo de alimentacion 
+     Failure/Error: expect(@test1.alimentacion).to eq("herbívoro")
+     
+     NoMethodError:
+       undefined method `alimentacion' for #<Ganado:0x00005594ae9c08e0>
+     # ./spec/ganado_spec.rb:28:in `block (4 levels) in <top (required)>'
+
+Finished in 0.01271 seconds (files took 0.17602 seconds to load)
+27 examples, 1 failure
+
+--[X] Prueba 42 Pasada prueba atributo alimentacion Ganado
+
+Granja
+  Ganado
+    Atributos de la clase Ganado
+      Tiene una clase para representar ganado
+      Tiene un atributo para la raza
+      Tiene un atributo para el tipo de aprovechamiento
+      Tiene un atributo para su tipo de alimentacion
+
