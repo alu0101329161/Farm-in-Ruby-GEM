@@ -16,4 +16,8 @@ class Ganado < Animal
         "La cabeza de ganado de raza #{@raza} con aprovechamiento tipo #{@aprovechamiento} y #{@alimentacion}"
     end
 
+    def <=> other 
+		@edad <=> other.edad
+	end
+
 end

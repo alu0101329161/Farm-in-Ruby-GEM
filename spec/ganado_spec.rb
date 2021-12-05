@@ -2,10 +2,10 @@ RSpec.describe Granja do
     describe Ganado do
 
         before :each do
-          @test1 = Ganado.new("bovino","carne","herbívoro")
-          @test2 = Ganado.new("porcino","piel","omnívoro")
-          @test3 = Ganado.new("ovino","leche","herbívoro")
-          @test4 = Ganado.new("caprino","carne","herbívoro")
+          @test1 = Ganado.new("bovino","carne","herbívoro","1111",284,"macho",9000)
+          @test2 = Ganado.new("porcino","piel","omnívoro","2222",285,"macho",9050)
+          @test3 = Ganado.new("ovino","leche","herbívoro","3333",286,"hembra",7000)
+          @test4 = Ganado.new("caprino","carne","herbívoro","4444",287,"hembra",5000)
         end
 
         context "Atributos de la clase Ganado" do
@@ -76,5 +76,29 @@ RSpec.describe Granja do
                 expect(@test4.is_a? Numeric).to eq(false)
             end
         end
+
+        context "Comparable" do
+            it "ganado1 < ganado2" do  
+                expect(@test1 < @test2).to eq(true)
+                expect(@test2 < @test3).to eq(true)
+            end
+            it "ganado1 <= ganado2" do  
+                expect(@test1 <= @test2).to eq(true)
+                expect(@test3 < @test4).to eq(true)
+            end
+            it "ganado1 > ganado2" do  
+                expect(@test2 > @test1).to eq(true)
+                expect(@test3 > @test1).to eq(true)
+            end
+            it "ganado1 >= ganado2" do  
+                expect(@test2 >= @test1).to eq(true)
+                expect(@test3 > @test1).to eq(true)
+            end
+            it "ganado1 == ganado2" do  
+                expect(@test3 == @test4).to eq(false)
+                expect(@test1 == @test4).to eq(false)
+            end
+          end
+    
     end
 end
