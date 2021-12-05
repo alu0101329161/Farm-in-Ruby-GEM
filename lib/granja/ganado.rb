@@ -12,4 +12,8 @@ class Ganado < Animal
 
     end
 
+    def to_s
+        "La cabeza de ganado de raza #{@raza} con aprovechamiento tipo #{@aprovechamiento} y #{@alimentacion}"
+    end
+
 end

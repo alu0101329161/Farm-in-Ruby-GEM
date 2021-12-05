@@ -30,6 +30,12 @@ RSpec.describe Granja do
                 expect(@test3.alimentacion).to eq("herbívoro")
                 expect(@test4.alimentacion).to eq("herbívoro")
             end
+            it "Se obtiene una cadena con la informacion del ganado correctamente formateada" do
+                expect(@test1.to_s).to eq("La cabeza de ganado de raza bovino con aprovechamiento tipo carne y herbívoro")
+                expect(@test2.to_s).to eq("La cabeza de ganado de raza porcino con aprovechamiento tipo piel y omnívoro")
+                expect(@test3.to_s).to eq("La cabeza de ganado de raza ovino con aprovechamiento tipo leche y herbívoro")
+                expect(@test4.to_s).to eq("La cabeza de ganado de raza caprino con aprovechamiento tipo carne y herbívoro")
+            end
         end
 
         context "Herencia de la clase Ganado" do
