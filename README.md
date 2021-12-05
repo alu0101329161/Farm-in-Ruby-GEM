@@ -536,3 +536,97 @@ Granja
       Tiene una clase para representar animales
 
 
+--[X] Prueba 25 Fallada prueba atributo identificador Animal
+
+Failures:
+
+  1) Granja Animal Atributos de la clase Animal Tiene un atributo para identificar al animal
+     Failure/Error: expect(@test1.identificacion).to eq("1111")
+     
+     NoMethodError:
+       undefined method `identificacion' for #<Animal:0x0000561c450ff520>
+     # ./spec/animal_spec.rb:15:in `block (4 levels) in <top (required)>'
+
+Finished in 0.00912 seconds (files took 0.16019 seconds to load)
+14 examples, 1 failure
+
+--[X] Prueba 26 Pasada prueba atributo identificador Animal
+
+Granja
+  Animal
+    Atributos de la clase Animal
+      Tiene una clase para representar animales
+      Tiene un atributo para identificar al animal
+
+--[X] Prueba 26 Fallada prueba atributo edad Animal
+
+Failures:
+
+  1) Granja Animal Atributos de la clase Animal Tiene un atributo con la edad del animal en d´ıas
+     Failure/Error: expect(@test1.edad).to eq(284)
+     
+     NoMethodError:
+       undefined method `edad' for #<Animal:0x000055d000fb9250 @identificador="1111">
+     # ./spec/animal_spec.rb:22:in `block (4 levels) in <top (required)>'
+
+Finished in 0.00851 seconds (files took 0.15227 seconds to load)
+15 examples, 1 failure
+
+--[X] Prueba 27 Pasada prueba atributo edad Animal
+
+Granja
+  Animal
+    Atributos de la clase Animal
+      Tiene una clase para representar animales
+      Tiene un atributo para identificar al animal
+      Tiene un atributo con la edad del animal en dias
+
+--[X] Prueba 28 Fallada prueba atributo sexo Animal
+
+Failures:
+
+  1) Granja Animal Atributos de la clase Animal Tiene un atributo con el sexo del animal
+     Failure/Error: expect(@test1.sexo).to eq("macho")
+     
+     NoMethodError:
+       undefined method `sexo' for #<Animal:0x00005577ded93ce8 @identificador="1111", @edad=284>
+     # ./spec/animal_spec.rb:28:in `block (4 levels) in <top (required)>'
+
+Finished in 0.01283 seconds (files took 0.14088 seconds to load)
+16 examples, 1 failure
+
+--[X] Prueba 29 Pasada prueba atributo sexo Animal
+
+Granja
+  Animal
+    Atributos de la clase Animal
+      Tiene una clase para representar animales
+      Tiene un atributo para identificar al animal
+      Tiene un atributo con la edad del animal en dias
+      Tiene un atributo con el sexo del animal
+      
+--[X] Prueba 30 Fallada prueba atributo peso Animal
+
+Failures:
+
+  1) Granja Animal Atributos de la clase Animal Tiene un atributo con el peso del animal en gramos
+     Failure/Error: expect(@test1.peso).to eq(9000)
+     
+     NoMethodError:
+       undefined method `peso' for #<Animal:0x0000564e37bd5cf0>
+     # ./spec/animal_spec.rb:34:in `block (4 levels) in <top (required)>'
+
+Finished in 0.00826 seconds (files took 0.152 seconds to load)
+17 examples, 1 failure
+
+--[X] Prueba 31 Pasada prueba atributo peso Animal
+
+Granja
+  Animal
+    Atributos de la clase Animal
+      Tiene una clase para representar animales
+      Tiene un atributo para identificar al animal
+      Tiene un atributo con la edad del animal en dias
+      Tiene un atributo con el sexo del animal
+      Tiene un atributo con el peso del animal en gramos
+
