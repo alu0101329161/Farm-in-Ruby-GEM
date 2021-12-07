@@ -50,14 +50,14 @@ RSpec.describe Granja do
 
     context "Herencia de la clase Datos" do
       it "Se espera que una instancia de la clase Datos sea un Datos" do
-        expect(@test1.is_a? Datos).to eq(true)
-        expect(@test2.is_a? Datos).to eq(true)
+        expect(@test1).to be_a_kind_of(Datos)
+        expect(@test2).to be_a_kind_of(Datos)
         expect(@test3.is_a? Datos).to eq(true)
         expect(@test4.is_a? Datos).to eq(true)
       end
       it "Se espera que una instancia de la clase Datos sea un objeto" do
-        expect(@test1.is_a? Object).to eq(true)
-        expect(@test2.is_a? Object).to eq(true)
+        expect(@test1).to be_a_kind_of(Object)
+        expect(@test2).to be_a_kind_of(Object)
         expect(@test3.is_a? Object).to eq(true)
         expect(@test4.is_a? Object).to eq(true)
       end
@@ -74,8 +74,8 @@ RSpec.describe Granja do
         expect(@test3.is_a? String).to eq(false)
       end
       it "No se espera que una instancia de la clase Datos sea un numero" do
-        expect(@test1.is_a? Numeric).to eq(false)
-        expect(@test2.is_a? Numeric).to eq(false)
+        expect(@test1).not_to be_a_kind_of (Numeric)
+        expect(@test2).not_to be_a_kind_of (Numeric)
         expect(@test3.is_a? Numeric).to eq(false)
         expect(@test4.is_a? Numeric).to eq(false)
       end
