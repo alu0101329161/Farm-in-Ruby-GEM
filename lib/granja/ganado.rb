@@ -1,9 +1,14 @@
-
+# Guardar los datos de las cabezas de ganado hereda de animal
 class Ganado < Animal
     
     include Comparable
+
+    # @overload getter de los atributos
     attr_reader :raza, :aprovechamiento, :alimentacion
 
+    # Constructor de la clase Ganado
+    # @note se aceptan 7 parametro y se llama a super
+    # @return inicializa atributos
     def initialize(raza = "", apro = "", ali = "", iden = 0, edad = 0, sexo = "", peso = 0)
 
         super(iden,edad,sexo,peso)
@@ -25,10 +30,14 @@ class Ganado < Animal
 
     end
 
+    # Metodo para convertir en string
+    # @return String
     def to_s
         "La cabeza de ganado de raza #{@raza} con aprovechamiento tipo #{@aprovechamiento} y #{@alimentacion}"
     end
 
+    # Metodo para comparar por peso
+    # @return Bool
     def <=> other 
 		@edad <=> other.edad
 	end
