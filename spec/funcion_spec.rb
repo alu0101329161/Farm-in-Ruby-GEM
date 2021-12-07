@@ -6,7 +6,7 @@ RSpec.describe Granja do
         expect(Funcion).not_to eq(nil)
       end
       it "Existe una constante para representar las condiciones de vida" do
-        expect(Funcion::CONDICIONES_DE_VIDA).to eq("campo abierto")
+        expect(Funcion::CONDICIONES_DE_VIDA).to eq("campo abierto, establo")
       end
       it "Existe un procedimiento para establecer los cuidados de los animales" do
         expect(Funcion.cuidados(1)).to eq("Cuidados tipo A")
@@ -20,16 +20,16 @@ RSpec.describe Granja do
 
     context "Herencia del modulo Funcion" do
       it "Se espera que sea un objeto de la clase Module" do
-        expect(Funcion.is_a? Module).to eq(true)
+        expect(Funcion).to be_a_kind_of (Module)
       end
       it "Se espera que sea un objeto (Object)" do
-        expect(Funcion.is_a? Object).to eq(true)
+        expect(Funcion).to be_a_kind_of (Object)
       end
       it "Se espera que sea un objeto basico (BasicObject)" do
         expect(Funcion.is_a? BasicObject).to eq(true)
       end
       it "No se espera que sea una instancia de la clase que representa una cadena (String)" do
-        expect(Funcion.is_a? String).to eq(false)
+        expect(Funcion).not_to be_a_kind_of (String)
       end
       it "No se espera que sea una instancia de la clase que representa un numero (Numeric)" do
         expect(Funcion.is_a? Numeric).to eq(false) 

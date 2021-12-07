@@ -1,7 +1,7 @@
 # Modulo para almacenar funcionalidades de la granja
 module Funcion
 
-  CONDICIONES_DE_VIDA = "campo abierto"
+  CONDICIONES_DE_VIDA = "campo abierto, establo"
 
   def self.cuidados(variable)
     if(variable == 1) 
