@@ -977,3 +977,5 @@ Granja
       No se espera que sea una instancia de la clase que representa una cadena (String)
       No se espera que sea una instancia de la clase que representa un numero (Numeric)
 
+--[X] Prueba 54 Añadidas pruebas nuevas
+  Añadidas pruebas con kind_of 
