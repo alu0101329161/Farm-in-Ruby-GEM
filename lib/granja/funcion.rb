@@ -7,7 +7,7 @@ module Funcion
     if(variable == 1) 
       return "Cuidados tipo A"
     else 
-      return "Cuidado tipo B"
+      return "Cuidados tipo B"
     end
   end
 

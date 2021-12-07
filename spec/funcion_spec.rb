@@ -10,9 +10,11 @@ RSpec.describe Granja do
       end
       it "Existe un procedimiento para establecer los cuidados de los animales" do
         expect(Funcion.cuidados(1)).to eq("Cuidados tipo A")
+        expect(Funcion.cuidados(2)).to eq("Cuidados tipo B")
       end
       it "Existe un procedimiento para establecer la reproduccion de los animales" do
-    
+        expect(Funcion.reproduccion(1)).to eq("Reproduccion tipo A")
+        expect(Funcion.reproduccion(2)).to eq("Reproduccion tipo B")
       end
     end
 
