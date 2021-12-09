@@ -36,10 +36,16 @@ class Ganado < Animal
         "La cabeza de ganado de raza #{@raza} con aprovechamiento tipo #{@aprovechamiento} y #{@alimentacion}"
     end
 
-    # Metodo para comparar por peso
+    # Metodo para comparar por edad
     # @return Bool
     def <=> other 
 		@edad <=> other.edad
 	end
+
+    # Metodo para comparar todos los valores
+    # @return Bool
+    def == other
+        @raza == other.raza && @aprovechamiento == other.aprovechamiento && @alimentacion == other.alimentacion
+    end
 
 end

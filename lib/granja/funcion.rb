@@ -2,7 +2,8 @@
 module Funcion
    
   # @note Constante del modulo
-  CONDICIONES_DE_VIDA = "campo abierto, establo"
+  CONDICIONES_DE_VIDA = "campo abierto"
+  CONDICIONES_DE_VIDA1 = "establo"
 
   # Metodo para procesar cuidadps
   # @return String

@@ -6,7 +6,8 @@ RSpec.describe Granja do
         expect(Funcion).not_to eq(nil)
       end
       it "Existe una constante para representar las condiciones de vida" do
-        expect(Funcion::CONDICIONES_DE_VIDA).to eq("campo abierto, establo")
+        expect(Funcion::CONDICIONES_DE_VIDA).to eq("campo abierto")
+        expect(Funcion::CONDICIONES_DE_VIDA1).to eq("establo")
       end
       it "Existe un procedimiento para establecer los cuidados de los animales" do
         expect(Funcion.cuidados(1)).to eq("Cuidados tipo A")

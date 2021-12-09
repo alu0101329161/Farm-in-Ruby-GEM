@@ -18,7 +18,12 @@ class Animal
         @identificador = iden
         @edad = edad
         @sexo = sexo
-        @peso = peso
+
+        if((peso).kind_of? Float)
+          @peso = peso
+        else
+            @peso = 0.0
+        end
     end
   
     # Metodo para convertir en string
@@ -38,4 +43,11 @@ class Animal
     def <=> other 
 		@peso <=> other.peso
 	end
+ 
+    # Metodo para comparar todos los valores
+    # @return Bool
+    def == other
+        @edad == other.edad && @peso == other.peso && @sexo == other.sexo && @identificador == other.identificador
+    end
+
 end

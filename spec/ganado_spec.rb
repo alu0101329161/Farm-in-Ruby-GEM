@@ -2,10 +2,10 @@ RSpec.describe Granja do
     describe Ganado do
 
         before :each do
-          @test1 = Ganado.new("bovino","carne","herbívoro","1111",284,"macho",9000)
-          @test2 = Ganado.new("porcino","piel","omnívoro","2222",285,"macho",9050)
-          @test3 = Ganado.new("ovino","leche","herbívoro","3333",286,"hembra",7000)
-          @test4 = Ganado.new("caprino","carne","herbívoro","4444",287,"hembra",5000)
+          @test1 = Ganado.new("bovino","carne","herbívoro","1111",284,"macho",9000.01)
+          @test2 = Ganado.new("porcino","piel","omnívoro","2222",285,"macho",9050.02)
+          @test3 = Ganado.new("ovino","leche","herbívoro","3333",286,"hembra",7000.03)
+          @test4 = Ganado.new("caprino","carne","herbívoro","4444",287,"hembra",5000.04)
         end
 
         context "Atributos de la clase Ganado" do
@@ -39,6 +39,9 @@ RSpec.describe Granja do
         end
 
         context "Herencia de la clase Ganado" do
+            it "Existe un módulo comparable" do
+                Ganado.is_a? Comparable
+            end
             it "Se espera que una instancia de la clase Ganado sea un Ganado" do
                 expect(@test1).to be_a_kind_of (Ganado)
                 expect(@test2).to be_a_kind_of (Ganado)
