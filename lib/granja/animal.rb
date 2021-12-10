@@ -8,7 +8,7 @@ class Animal
     # Constructor de la clase Animal
     # @note se aceptan 4 parametros de tipo int o string
     # @return inicializa atributos
-    def initialize(iden = 0, edad = 0, sexo = "", peso = 0)
+    def initialize(iden = 0, edad = 0, sexo = "", peso = 0.0)
         if defined?(@@cantidad_animal)
             @@cantidad_animal +=1
         else

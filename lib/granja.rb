@@ -6,7 +6,6 @@ require "granja/funcion"
 
 module Granja
 
-  include Funcion
   class Error < StandardError; end
 
 end

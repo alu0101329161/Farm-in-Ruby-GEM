@@ -39,9 +39,6 @@ RSpec.describe Granja do
         end
 
         context "Herencia de la clase Ganado" do
-            it "Existe un módulo comparable" do
-                Ganado.is_a? Comparable
-            end
             it "Se espera que una instancia de la clase Ganado sea un Ganado" do
                 expect(@test1).to be_a_kind_of (Ganado)
                 expect(@test2).to be_a_kind_of (Ganado)
@@ -81,6 +78,9 @@ RSpec.describe Granja do
         end
 
         context "Comparable" do
+            it "Existe un módulo comparable" do
+                Ganado.is_a? Comparable
+            end
             it "ganado1 < ganado2" do  
                 expect(@test1 < @test2).to eq(true)
                 expect(@test2 < @test3).to eq(true)
@@ -100,6 +100,9 @@ RSpec.describe Granja do
             it "ganado1 == ganado2" do  
                 expect(@test3 == @test4).to eq(false)
                 expect(@test1 == @test4).to eq(false)
+            end
+            it "ganado1 between(ganado2 y ganado3)" do  
+                expect(@test3.between?(@test1,@test2)).to eq(false)
             end
           end
     
