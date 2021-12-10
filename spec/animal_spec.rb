@@ -105,6 +105,9 @@ RSpec.describe Granja do
             expect(@test3 == @test4).to eq(false)
             expect(@test1 == @test4).to eq(false)
         end
+        it "animal1 between(animal2 y animal3)" do  
+            expect(@test3.between?(@test1,@test2)).to eq(false)
+        end
       end
 
 
