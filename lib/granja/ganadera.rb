@@ -91,7 +91,27 @@ class Ganadera < Datos
 		Ganadera.new(@ganado, @destino, @numero*value, @precio_unitario, @precio_venta)
 	end
 
+    def sistema_gestion
+        if(@ganado == :bovino || @ganado == :porcino)
+            return Granja::Funcion::CONDICIONES_DE_VIDA1
+        else
+            return Granja::Funcion::CONDICIONES_DE_VIDA
+        end
+    end
 
+    def estimulacion
+      Granja::Funcion.cuidados(@numero * 2)
+    end
+
+    def poblacion
+      cantidad = 0
+      @almacen.each do |elemento|
+        if elemento.edad > 730
+         cantidad = cantidad + 1
+        end
+      end
+      Granja::Funcion.reproduccion(cantidad)
+    end
 
     def to_s
         s = "La granja ganadera tiene como ganado a los #{@ganado}, el destino es #{@destino}, el numero es #{@numero}, con "
