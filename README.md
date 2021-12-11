@@ -1079,4 +1079,54 @@ Granja
   Ganadera
     Atributos de la clase Datos
       Se obtiene una cadena con la informaci´on de la granja ganadera correctamente formateada
+
+--[X] Prueba 60 Fallo modulo enumerable
       
+Failures:
+
+  1) Granja Ganadera Enumerable Se podra acceder con []
+     Failure/Error: expect(@test1[0]).to eq(:bovino)
+     
+     NoMethodError:
+       undefined method `[]' for #<Ganadera:0x0000557a77754c38>
+     # ./spec/ganadera_spec.rb:104:in `block (4 levels) in <top (required)>'
+
+  2) Granja Ganadera Enumerable Maximo y minimo
+     Failure/Error: expect(@tanda.max).to eq(@test4)
+     
+     ArgumentError:
+       comparison of Ganadera with Ganadera failed
+     # ./spec/ganadera_spec.rb:110:in `max'
+     # ./spec/ganadera_spec.rb:110:in `block (4 levels) in <top (required)>'
+
+  3) Granja Ganadera Enumerable Metodo sort
+     Failure/Error: expect(tanda.sort).to eq([@test1, @test2, @test3, @test4])
+     
+     ArgumentError:
+       comparison of Ganadera with Ganadera failed
+     # ./spec/ganadera_spec.rb:115:in `sort'
+     # ./spec/ganadera_spec.rb:115:in `block (4 levels) in <top (required)>'
+
+  4) Granja Ganadera Enumerable Metodo collect
+     Failure/Error: expect(@tanda.collect {|p| p * 10}).to eq(tanda)
+     
+     NoMethodError:
+       undefined method `*' for #<Ganadera:0x0000557a77744b08>
+     # ./spec/ganadera_spec.rb:123:in `block (5 levels) in <top (required)>'
+     # ./spec/ganadera_spec.rb:123:in `collect'
+     # ./spec/ganadera_spec.rb:123:in `block (4 levels) in <top (required)>'
+
+Finished in 0.03094 seconds (files took 0.18091 seconds to load)
+79 examples, 4 failures
+
+--[X] Prueba 61 Pasada pruebas modulo enumerable
+
+    Enumerable
+      Existe un módulo comparable
+      Se podra acceder con []
+      Maximo y minimo
+      Metodo sort
+      Metodo collect
+      Metodo detect
+      Metodo find all
+
