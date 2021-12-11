@@ -23,4 +23,18 @@ class Ganadera < Datos
 
     end
 
+    def add_animal other
+        if (other.respond_to? Ganado)
+            @almacen.push(other)
+        else
+            return "Solo se almacenan onjetos de tipo Ganado"
+        end
+    end
+
+    def to_s
+        s = "La granja ganadera tiene como ganado a los #{@ganado}, el destino es #{@destino}, el numero es #{@numero}, con "
+        s << "precio unitario de #{precio_unitario} y un precio de venta de #{@precio_venta}"
+        return s
+    end
+
 end

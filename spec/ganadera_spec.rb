@@ -48,6 +48,12 @@ RSpec.describe Granja do
                 expect(@test3.almacen).not_to eq(nil)
                 expect(@test4.almacen).not_to eq(nil)
             end
+            it "Se obtiene una cadena con la informaci´on de la granja ganadera correctamente formateada" do
+                expect(@test1.to_s).to eq("La granja ganadera tiene como ganado a los bovino, el destino es leche, el numero es 50, con precio unitario de 50.1 y un precio de venta de 50.1")
+                expect(@test2.to_s).to eq("La granja ganadera tiene como ganado a los ovino, el destino es leche, el numero es 51, con precio unitario de 51.2 y un precio de venta de 51.2")
+                expect(@test3.to_s).to eq("La granja ganadera tiene como ganado a los caprino, el destino es sacrificio, el numero es 52, con precio unitario de 52.3 y un precio de venta de 52.3")
+                expect(@test4.to_s).to eq("La granja ganadera tiene como ganado a los porcino, el destino es sacrificio, el numero es 53, con precio unitario de 53.4 y un precio de venta de 53.4")
+            end
         end
 
         context "Herencia de la clase Ganadera" do
