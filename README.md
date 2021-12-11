@@ -1131,3 +1131,30 @@ Finished in 0.03094 seconds (files took 0.18091 seconds to load)
       Metodo detect
       Metodo find all
 
+--[X] Prueba 62 Fallada pruebas funciones
+
+Failures:
+
+  1) Granja Ganadera Funciones Sistema de Gestion
+     Failure/Error: expect(@test1.sistema_gestion).to eq(:jaula)
+     
+     NoMethodError:
+       undefined method `sistema_gestion' for #<Ganadera:0x00005592ba5c1a78>
+     # ./spec/ganadera_spec.rb:139:in `block (4 levels) in <top (required)>'
+
+  2) Granja Ganadera Funciones Sistema de reproduccion
+     Failure/Error: expect(@test1.estimulacion).to eq("Se ha de poder proporcionar a todos los animales de una granja la cantidad de antibiotico 100")
+     
+     NoMethodError:
+       undefined method `estimulacion' for #<Ganadera:0x00005592ba5a76c8>
+     # ./spec/ganadera_spec.rb:145:in `block (4 levels) in <top (required)>'
+
+  3) Granja Ganadera Funciones Sistema de poblacion
+     Failure/Error: expect(@test1.poblacion).to eq("Hay 2 de animales preparados para la reproduccion")
+     
+     NoMethodError:
+       undefined method `poblacion' for #<Ganadera:0x00005592ba5a5cb0>
+     # ./spec/ganadera_spec.rb:157:in `block (4 levels) in <top (required)>'
+
+Finished in 0.02656 seconds (files took 0.16799 seconds to load)
+82 examples, 3 failures
