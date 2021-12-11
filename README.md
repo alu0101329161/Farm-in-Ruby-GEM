@@ -1039,6 +1039,7 @@ Granja
      # ./spec/ganadera_spec.rb:85:in `block (4 levels) in <top (required)>'
 
 --[X] Prueba 57 Pasada pruebas atributos de la clase Ganadera
+
 Granja
   Ganadera
     Atributos de la clase Datos
@@ -1049,3 +1050,33 @@ Granja
       Tiene un atributo para el precio unitario de los animales
       Tiene un atributo para el precio de venta unitario de los animales
       Tiene un atributo para almacenar los animales de la granja
+
+--[X] Prueba 58 Fallada pruebas metodo to_S de la clase Ganadera
+
+  1) Granja Ganadera Atributos de la clase Datos Se obtiene una cadena con la informaci´on de la granja ganadera correctamente formateada
+     Failure/Error: expect(@test1.to_s).to eq("La granja ganadera tiene como ganado a los bovino, el destino es leche, el numero es 50, con precio unitario de 50.1 y un precio de venta de 50.1")
+     
+       expected: "La granja ganadera tiene como ganado a los bovino, el destino es leche, el numero es 50, con precio unitario de 50.1 y un precio de venta de 50.1"
+            got: "la identificacion de la granja es:  \n el nombre es:  \n , el tipo es:  \n y la descripcion es: "
+     
+       (compared using ==)
+     
+       Diff:
+       @@ -1,4 +1,7 @@
+       -La granja ganadera tiene como ganado a los bovino, el destino es leche, el numero es 50, con precio unitario de 50.1 y un precio de venta de 50.1
+       +la identificacion de la granja es:  
+       + el nombre es:  
+       + , el tipo es:  
+       + y la descripcion es: 
+       
+     # ./spec/ganadera_spec.rb:52:in `block (4 levels) in <top (required)>'
+
+Finished in 0.04614 second
+
+--[X] Prueba 59 Pasada pruebas metodo to_S de la clase Ganadera
+
+Granja
+  Ganadera
+    Atributos de la clase Datos
+      Se obtiene una cadena con la informaci´on de la granja ganadera correctamente formateada
+      
