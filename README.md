@@ -1038,3 +1038,14 @@ Granja
        undefined method `almacen' for #<Ganadera:0x0000564013494950>
      # ./spec/ganadera_spec.rb:85:in `block (4 levels) in <top (required)>'
 
+--[X] Prueba 57 Pasada pruebas atributos de la clase Ganadera
+Granja
+  Ganadera
+    Atributos de la clase Datos
+      Tiene una clase para almacenar los datos de la granja
+      Tiene un atributo para el tipo de ganado (bovino, ovino, caprino o porcino)
+      Tiene un atributo para el destino de los animales (leche, sacrificio)
+      Tiene un atributo para el numero de animales de la granja
+      Tiene un atributo para el precio unitario de los animales
+      Tiene un atributo para el precio de venta unitario de los animales
+      Tiene un atributo para almacenar los animales de la granja
