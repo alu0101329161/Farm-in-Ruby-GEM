@@ -46,6 +46,48 @@ RSpec.describe Granja do
                 expect(@test4.is_a? Ganado).to eq(false)
               end
           end
+
+          context "Atributos de la clase Datos" do
+            it "Tiene una clase para almacenar los datos de la granja" do
+              expect(Ganadera.new()).not_to eq(nil)
+            end
+            it "Tiene un atributo para el tipo de ganado (bovino, ovino, caprino o porcino)" do
+                expect(@test1.ganado).to eq(:bovino)
+                expect(@test2.ganado).to eq(:ovino)
+                expect(@test3.ganado).to eq(:caprino)
+                expect(@test4.ganado).to eq(:procino)
+            end
+            it "Tiene un atributo para el destino de los animales (leche, sacrificio)" do
+                expect(@test1.destino).to eq(:leche)
+                expect(@test2.destino).to eq(:leche)
+                expect(@test3.destino).to eq(:sacrificio)
+                expect(@test4.destino).to eq(:sacrificio)
+            end
+            it "Tiene un atributo para el numero de animales de la granja" do
+                expect(@test1.numero).to eq(50)
+                expect(@test2.numero).to eq(51)
+                expect(@test3.numero).to eq(52)
+                expect(@test4.numero).to eq(53)
+            end
+            it "Tiene un atributo para el precio unitario de los animales" do
+                expect(@test1.precio_unitario).to eq(50.1)
+                expect(@test2.precio_unitario).to eq(51.2)
+                expect(@test3.precio_unitario).to eq(52.3)
+                expect(@test4.precio_unitario).to eq(53.4)
+            end
+            it "Tiene un atributo para el precio de venta unitario de los animales" do
+                expect(@test1.precio_venta).to eq(50.1)
+                expect(@test2.precio_venta).to eq(51.2)
+                expect(@test3.precio_venta).to eq(52.3)
+                expect(@test4.precio_venta).to eq(53.4)
+            end
+            it "Tiene un atributo para almacenar los animales de la granja" do
+                expect(@test1.almacen).not_to eq(nil)
+                expect(@test2.almacen).not_to eq(nil)
+                expect(@test3.almacen).not_to eq(nil)
+                expect(@test4.almacen).not_to eq(nil)
+            end
+        end
   
     end
 end
