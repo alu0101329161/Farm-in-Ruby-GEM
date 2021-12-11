@@ -8,7 +8,7 @@
     # @return inicializa atributos
     def initialize(identificacion = "", nombre = "", tipo = "", descripcion = "")
 
-      if(tipo == "avicola" || tipo == "ganadera")
+      if(tipo == :avicola || tipo == :ganadera)
         @tipo = tipo
       else
         return nil

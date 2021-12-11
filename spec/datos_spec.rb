@@ -2,10 +2,10 @@ RSpec.describe Granja do
   describe Datos do
 
     before :each do
-      @test1 = Datos.new("1111","FARMER_A","avicola","muy cara")
-      @test2 = Datos.new("2222","FARMER_B","avicola","cara")
-      @test3 = Datos.new("3333","FARMER_C","ganadera","barata")
-      @test4 = Datos.new("4444","FARMER_D","ganadera","muy barata")
+      @test1 = Datos.new("1111","FARMER_A",:avicola,"muy cara")
+      @test2 = Datos.new("2222","FARMER_B",:avicola,"cara")
+      @test3 = Datos.new("3333","FARMER_C",:ganadera,"barata")
+      @test4 = Datos.new("4444","FARMER_D",:ganadera,"muy barata")
     end
 
     context "Atributos de la clase Datos" do
@@ -27,10 +27,10 @@ RSpec.describe Granja do
   
       end
       it "Tiene un atributo para el tipo de granja" do
-        expect(@test1.tipo).to eq("avicola")
-        expect(@test2.tipo).to eq("avicola")
-        expect(@test3.tipo).to eq("ganadera")
-        expect(@test4.tipo).to eq("ganadera")
+        expect(@test1.tipo).to eq(:avicola)
+        expect(@test2.tipo).to eq(:avicola)
+        expect(@test3.tipo).to eq(:ganadera)
+        expect(@test4.tipo).to eq(:ganadera)
   
       end
       it "Tiene un atributo para la descripcion de granja" do
