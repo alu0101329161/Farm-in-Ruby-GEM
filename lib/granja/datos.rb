@@ -6,7 +6,7 @@
     # Constructor de la clase datos
     # @note se aceptan 4 parametros de cualquier tipo
     # @return inicializa atributos
-    def initialize(identificacion = "", nombre = "", tipo = "", descripcion = "")
+    def initialize(identificacion = nil, nombre = "", tipo = nil, descripcion = "")
 
       if(tipo == :avicola || tipo == :ganadera)
         @tipo = tipo
@@ -21,6 +21,6 @@
     # Metodo para convertir en string
     # @return String
     def to_s
-      "la identificacion de la granja es: #{@identificacion} \n el nombre es: #{@nombre} \n , el tipo es: #{@tipo} \n y la descripcion es: #{@descripcion}"
+      "la identificacion de la granja es: #{@identificacion}, el nombre es: #{@nombre}, el tipo es: #{@tipo} y la descripcion es: #{@descripcion}"
     end
   end

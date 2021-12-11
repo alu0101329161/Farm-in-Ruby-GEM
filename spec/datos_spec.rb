@@ -41,10 +41,10 @@ RSpec.describe Granja do
   
       end
       it "Tiene un atributo para poder impirmir" do
-        expect(@test1.to_s).to eq("la identificacion de la granja es: 1111 \n el nombre es: FARMER_A \n , el tipo es: avicola \n y la descripcion es: muy cara")
-        expect(@test2.to_s).to eq("la identificacion de la granja es: 2222 \n el nombre es: FARMER_B \n , el tipo es: avicola \n y la descripcion es: cara")
-        expect(@test3.to_s).to eq("la identificacion de la granja es: 3333 \n el nombre es: FARMER_C \n , el tipo es: ganadera \n y la descripcion es: barata")
-        expect(@test4.to_s).to eq("la identificacion de la granja es: 4444 \n el nombre es: FARMER_D \n , el tipo es: ganadera \n y la descripcion es: muy barata")
+        expect(@test1.to_s).to eq("la identificacion de la granja es: 1111, el nombre es: FARMER_A, el tipo es: avicola y la descripcion es: muy cara")
+        expect(@test2.to_s).to eq("la identificacion de la granja es: 2222, el nombre es: FARMER_B, el tipo es: avicola y la descripcion es: cara")
+        expect(@test3.to_s).to eq("la identificacion de la granja es: 3333, el nombre es: FARMER_C, el tipo es: ganadera y la descripcion es: barata")
+        expect(@test4.to_s).to eq("la identificacion de la granja es: 4444, el nombre es: FARMER_D, el tipo es: ganadera y la descripcion es: muy barata")
       end
     end
 

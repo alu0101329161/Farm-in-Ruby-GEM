@@ -132,10 +132,31 @@ RSpec.describe Granja do
                 expect(@tanda.find_all {|p| p.destino == :sacrificio}).to eq([@test3, @test4])
                 expect(@tanda.find_all {|p| p.ganado == :bovino}).to eq([@test1])
             end
-
-
         end
 
+        context "Funciones" do
+            it "Sistema de Gestion" do
+                expect(@test1.sistema_gestion).to eq(:jaula)
+                expect(@test2.sistema_gestion).to eq(:campo_abierto)
+                expect(@test3.sistema_gestion).to eq(:campo_abierto)
+                expect(@test4.sistema_gestion).to eq(:jaula)
+            end
+            it "Sistema de reproduccion" do
+                expect(@test1.estimulacion).to eq("Se ha de poder proporcionar a todos los animales de una granja la cantidad de antibiotico 100")
+                expect(@test2.estimulacion).to eq("Se ha de poder proporcionar a todos los animales de una granja la cantidad de antibiotico 102")
+                expect(@test3.estimulacion).to eq("Se ha de poder proporcionar a todos los animales de una granja la cantidad de antibiotico 104")
+                expect(@test4.estimulacion).to eq("Se ha de poder proporcionar a todos los animales de una granja la cantidad de antibiotico 106")
+            end 
+            it "Sistema de poblacion" do
+
+                @test1.add_animal(Ganado.new(:bovino,:carne,:herbívoro,"1111",750,:macho,9000.01))
+                @test1.add_animal(Ganado.new(:porcino,:piel,:omnívoro,"2222",800,:macho,9050.02))
+                @test1.add_animal(Ganado.new(:ovino,:leche,:herbívoro,"3333",234,:hembra,7000.03))
+                @test1.add_animal(Ganado.new(:caprino,:carne,:herbívoro,"4444",287,:hembra,5000.04))
+
+                expect(@test1.poblacion).to eq("Hay 2 de animales preparados para la reproduccion")
+            end 
+        end
   
     end
 end

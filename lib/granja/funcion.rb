@@ -4,26 +4,18 @@ module Granja
     
     # @note Constante del modulo
     CONDICIONES_DE_VIDA = :campo_abierto
-    CONDICIONES_DE_VIDA1 = :establo
+    CONDICIONES_DE_VIDA1 = :jaula
 
     # Metodo para procesar cuidadps
     # @return String
-    def self.cuidados(variable)
-      if(variable == 1) 
-        return "Cuidados tipo A"
-      else 
-        return "Cuidados tipo B"
-      end
+    def self.cuidados(cantidad)
+      "Se ha de poder proporcionar a todos los animales de una granja la cantidad de antibiotico #{cantidad}"
     end
 
     # Metodo para procesar reproduccion
     # @return String
-    def self.reproduccion(variable)
-      if(variable == 1) 
-        return "Reproduccion tipo A"
-      else 
-        return "Reproduccion tipo B"
-      end
+    def self.reproduccion(cantidad)
+      "Hay #{cantidad} de animales preparados para la reproduccion"
     end
 
   end

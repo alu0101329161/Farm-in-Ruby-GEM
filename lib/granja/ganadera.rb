@@ -5,7 +5,7 @@ class Ganadera < Datos
 
     attr_reader :ganado, :destino, :numero, :precio_unitario, :precio_venta, :almacen
 
-    def initialize(ganado = nil, destino = nil, numero = 0, precio_unitario = 0, precio_venta = 0)
+    def initialize(ganado = nil, destino = nil, numero = 0, precio_unitario = 0, precio_venta = 0, iden = nil, nombre = nil, desc = "")
 
         if(ganado == :bovino || ganado == :porcino || ganado == :ovino || ganado == :caprino)
             @ganado = ganado
@@ -18,6 +18,10 @@ class Ganadera < Datos
               return nil
         end
 
+ 
+        # le pasamos a datos que soy granja tipo ganadera
+        super(iden, nombre, :ganadera, desc)
+
         @numero = numero
         @precio_unitario = precio_unitario
         @precio_venta = precio_venta
@@ -26,7 +30,7 @@ class Ganadera < Datos
     end
 
     def add_animal other
-        if (other.respond_to? Ganado)
+        if (other.instance_of? Ganado)
             @almacen.push(other)
         else
             return "Solo se almacenan objetos de tipo Ganado"
@@ -86,6 +90,8 @@ class Ganadera < Datos
     def * value
 		Ganadera.new(@ganado, @destino, @numero*value, @precio_unitario, @precio_venta)
 	end
+
+
 
     def to_s
         s = "La granja ganadera tiene como ganado a los #{@ganado}, el destino es #{@destino}, el numero es #{@numero}, con "
