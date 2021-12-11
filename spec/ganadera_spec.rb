@@ -6,11 +6,12 @@ RSpec.describe Granja do
             @test2 = Ganadera.new(:ovino,:leche,51,51.2,51.2)
             @test3 = Ganadera.new(:caprino,:sacrificio,52,52.3,52.3)
             @test4 = Ganadera.new(:porcino,:sacrificio,53,53.4,53.4)
+            @tanda  = [@test1, @test2, @test3, @test4]
         end
 
         context "Atributos de la clase Datos" do
             it "Tiene una clase para almacenar los datos de la granja" do
-              expect(Ganadera.new()).not_to eq(nil)
+              expect(Ganadera.new()).not_to be(nil)
             end
             it "Tiene un atributo para el tipo de ganado (bovino, ovino, caprino o porcino)" do
                 expect(@test1.ganado).to eq(:bovino)
@@ -94,6 +95,47 @@ RSpec.describe Granja do
                 expect(@test4.is_a? Ganado).to eq(false)
             end
         end
+
+        context "Enumerable" do
+            it "Existe un módulo comparable" do
+                expect(@test1).to be_a_kind_of (Enumerable)
+            end
+            it "Se podra acceder con []" do
+                expect(@test1[0]).to eq(:bovino)
+                expect(@test1[-6]).to eq(:bovino)
+                expect(@test2[:destino]).to eq(:leche)
+                expect(@test2["numero"]).to eq(51)
+            end
+            it "Maximo y minimo" do
+                expect(@tanda.max).to eq(@test4)
+                expect(@tanda.min).to eq(@test1)
+            end
+            it "Metodo sort" do
+                tanda = [@test2, @test1, @test4, @test3]
+                expect(tanda.sort).to eq([@test1, @test2, @test3, @test4])
+            end
+            it "Metodo collect" do
+                test1 = Ganadera.new(:bovino,:leche,500,50.1,50.1)
+                test2 = Ganadera.new(:ovino,:leche,510,51.2,51.2)
+                test3 = Ganadera.new(:caprino,:sacrificio,520,52.3,52.3)
+                test4 = Ganadera.new(:porcino,:sacrificio,530,53.4,53.4)
+                tanda  = [test1, test2, test3, test4]
+                expect(@tanda.collect {|p| p * 10}).to eq(tanda)
+            end
+            it "Metodo detect" do
+                expect(@tanda.detect {|p| p.ganado == :bovino && p.destino == :leche && p.numero == 50}).to eq(@test1)
+                expect(@tanda.detect {|p| p.ganado == :ovino && p.destino == :leche && p.numero == 51}).to eq(@test2)
+                expect(@tanda.detect {|p| p.ganado == :caprino && p.destino == :sacrificio && p.numero == 53}).to eq(nil)
+            end
+            it "Metodo find all" do
+                expect(@tanda.find_all {|p| p.destino == :leche}).to eq([@test1,@test2])
+                expect(@tanda.find_all {|p| p.destino == :sacrificio}).to eq([@test3, @test4])
+                expect(@tanda.find_all {|p| p.ganado == :bovino}).to eq([@test1])
+            end
+
+
+        end
+
   
     end
 end
