@@ -1119,6 +1119,7 @@ Failures:
 Finished in 0.03094 seconds (files took 0.18091 seconds to load)
 79 examples, 4 failures
 
+
 --[X] Prueba 61 Pasada pruebas modulo enumerable
 
     Enumerable
