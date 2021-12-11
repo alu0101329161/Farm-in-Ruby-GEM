@@ -75,7 +75,7 @@ class Ganadera < Datos
     
     # Hace falta para los metodos de enumerable
     def <=> other 
-		@numero <=> other.numero
+		@numero <=> other.numero 
 	end
    
     # da problemas con el collect
