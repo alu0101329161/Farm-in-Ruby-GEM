@@ -979,3 +979,15 @@ Granja
 
 --[X] Prueba 54 Añadidas pruebas nuevas
   Añadidas pruebas con kind_of 
+
+ --[X] Prueba 55 Herencia de la clase Ganadera
+
+ Granja
+  Ganadera
+    Herencia de la clase Ganadera
+      Se espera que una instancia de la clase Ganadera sea una Granja Ganadera
+      Se espera que una instancia de la clase Ganadera sea un Dato
+      Se espera que una instancia de la clase Ganadera sea un Object
+      Se espera que una instancia de la clase Ganadera sea un Basic Object
+      No se espera que una instancia de la clase Ganadera sea un Animal
+      No se espera que una instancia de la clase Ganadera sea un Ganado
