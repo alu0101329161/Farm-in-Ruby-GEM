@@ -1158,3 +1158,14 @@ Failures:
 
 Finished in 0.02656 seconds (files took 0.16799 seconds to load)
 82 examples, 3 failures
+
+--[X] Prueba 63 Pasadas pruebas funciones
+
+ Granja
+  Ganadera 
+    Funciones
+      Sistema de Gestion
+      Sistema de reproduccion
+      Sistema de poblacion
+
+      
