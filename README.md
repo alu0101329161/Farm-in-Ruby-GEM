@@ -991,3 +991,50 @@ Granja
       Se espera que una instancia de la clase Ganadera sea un Basic Object
       No se espera que una instancia de la clase Ganadera sea un Animal
       No se espera que una instancia de la clase Ganadera sea un Ganado
+
+ --[X] Prueba 56 Error atributos de la clase Ganadera
+
+ Failures:
+
+  1) Granja Ganadera Atributos de la clase Datos Tiene un atributo para el tipo de ganado (bovino, ovino, caprino o porcino)
+     Failure/Error: expect(@test1.ganado).to eq(:bovino)
+     
+     NoMethodError:
+       undefined method `ganado' for #<Ganadera:0x00005640134b1780>
+     # ./spec/ganadera_spec.rb:55:in `block (4 levels) in <top (required)>'
+
+  2) Granja Ganadera Atributos de la clase Datos Tiene un atributo para el destino de los animales (leche, sacrificio)
+     Failure/Error: expect(@test1.destino).to eq(:leche)
+     
+     NoMethodError:
+       undefined method `destino' for #<Ganadera:0x00005640134a7ed8>
+     # ./spec/ganadera_spec.rb:61:in `block (4 levels) in <top (required)>'
+
+  3) Granja Ganadera Atributos de la clase Datos Tiene un atributo para el numero de animales de la granja
+     Failure/Error: expect(@test1.numero).to eq(50)
+     
+     NoMethodError:
+       undefined method `numero' for #<Ganadera:0x00005640134a6920>
+     # ./spec/ganadera_spec.rb:67:in `block (4 levels) in <top (required)>'
+
+  4) Granja Ganadera Atributos de la clase Datos Tiene un atributo para el precio unitario de los animales
+     Failure/Error: expect(@test1.precio_unitario).to eq(50.1)
+     
+     NoMethodError:
+       undefined method `precio_unitario' for #<Ganadera:0x00005640134a4eb8>
+     # ./spec/ganadera_spec.rb:73:in `block (4 levels) in <top (required)>'
+
+  5) Granja Ganadera Atributos de la clase Datos Tiene un atributo para el precio de venta unitario de los animales
+     Failure/Error: expect(@test1.precio_venta).to eq(50.1)
+     
+     NoMethodError:
+       undefined method `precio_venta' for #<Ganadera:0x0000564013497150>
+     # ./spec/ganadera_spec.rb:79:in `block (4 levels) in <top (required)>'
+
+  6) Granja Ganadera Atributos de la clase Datos Tiene un atributo para almacenar los animales de la granja
+     Failure/Error: expect(@test1.almacen).not_to eq(nil)
+     
+     NoMethodError:
+       undefined method `almacen' for #<Ganadera:0x0000564013494950>
+     # ./spec/ganadera_spec.rb:85:in `block (4 levels) in <top (required)>'
+
