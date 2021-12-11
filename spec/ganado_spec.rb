@@ -2,10 +2,10 @@ RSpec.describe Granja do
     describe Ganado do
 
         before :each do
-          @test1 = Ganado.new("bovino","carne","herbívoro","1111",284,"macho",9000.01)
-          @test2 = Ganado.new("porcino","piel","omnívoro","2222",285,"macho",9050.02)
-          @test3 = Ganado.new("ovino","leche","herbívoro","3333",286,"hembra",7000.03)
-          @test4 = Ganado.new("caprino","carne","herbívoro","4444",287,"hembra",5000.04)
+          @test1 = Ganado.new(:bovino,:carne,:herbívoro,"1111",284,:macho,9000.01)
+          @test2 = Ganado.new(:porcino,:piel,:omnívoro,"2222",285,:macho,9050.02)
+          @test3 = Ganado.new(:ovino,:leche,:herbívoro,"3333",286,:hembra,7000.03)
+          @test4 = Ganado.new(:caprino,:carne,:herbívoro,"4444",287,:hembra,5000.04)
         end
 
         context "Atributos de la clase Ganado" do
@@ -13,22 +13,22 @@ RSpec.describe Granja do
                 expect(Ganado.new()).not_to be(nil)
             end
             it "Tiene un atributo para la raza" do
-                expect(@test1.raza).to eq("bovino")
-                expect(@test2.raza).to eq("porcino")
-                expect(@test3.raza).to eq("ovino")
-                expect(@test4.raza).to eq("caprino")
+                expect(@test1.raza).to eq(:bovino)
+                expect(@test2.raza).to eq(:porcino)
+                expect(@test3.raza).to eq(:ovino)
+                expect(@test4.raza).to eq(:caprino)
             end
             it "Tiene un atributo para el tipo de aprovechamiento " do
-                expect(@test1.aprovechamiento).to eq("carne")
-                expect(@test2.aprovechamiento).to eq("piel")
-                expect(@test3.aprovechamiento).to eq("leche")
-                expect(@test4.aprovechamiento).to eq("carne")
+                expect(@test1.aprovechamiento).to eq(:carne)
+                expect(@test2.aprovechamiento).to eq(:piel)
+                expect(@test3.aprovechamiento).to eq(:leche)
+                expect(@test4.aprovechamiento).to eq(:carne)
             end
             it "Tiene un atributo para su tipo de alimentacion " do
-                expect(@test1.alimentacion).to eq("herbívoro")
-                expect(@test2.alimentacion).to eq("omnívoro")
-                expect(@test3.alimentacion).to eq("herbívoro")
-                expect(@test4.alimentacion).to eq("herbívoro")
+                expect(@test1.alimentacion).to eq(:herbívoro)
+                expect(@test2.alimentacion).to eq(:omnívoro)
+                expect(@test3.alimentacion).to eq(:herbívoro)
+                expect(@test4.alimentacion).to eq(:herbívoro)
             end
             it "Se obtiene una cadena con la informacion del ganado correctamente formateada" do
                 expect(@test1.to_s).to eq("La cabeza de ganado de raza bovino con aprovechamiento tipo carne y herbívoro")

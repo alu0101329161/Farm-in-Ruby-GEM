@@ -2,10 +2,10 @@ RSpec.describe Granja do
     describe Animal do
 
       before :each do
-        @test1 = Animal.new("1111",284,"macho",9000.01)
-        @test2 = Animal.new("2222",285,"macho",9050.02)
-        @test3 = Animal.new("3333",286,"hembra",7000.03)
-        @test4 = Animal.new("4444",287,"hembra",5000.04)
+        @test1 = Animal.new("1111",284,:macho,9000.01)
+        @test2 = Animal.new("2222",285,:macho,9050.02)
+        @test3 = Animal.new("3333",286,:hembra,7000.03)
+        @test4 = Animal.new("4444",287,:hembra,5000.04)
       end
 
       context "Atributos de la clase Animal" do
@@ -25,10 +25,10 @@ RSpec.describe Granja do
             expect(@test4.edad).to eq(287)
         end
         it "Tiene un atributo con el sexo del animal" do
-            expect(@test1.sexo).to eq("macho")
-            expect(@test2.sexo).to eq("macho")
-            expect(@test3.sexo).to eq("hembra")
-            expect(@test4.sexo).to eq("hembra")
+            expect(@test1.sexo).to eq(:macho)
+            expect(@test2.sexo).to eq(:macho)
+            expect(@test3.sexo).to eq(:hembra)
+            expect(@test4.sexo).to eq(:hembra)
         end
         it "Tiene un atributo con el peso del animal en gramos" do
             expect(@test1.peso).to eq(9000.01)
