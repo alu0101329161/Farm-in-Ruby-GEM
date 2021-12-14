@@ -1,16 +1,16 @@
 RSpec.describe Granja do
-    describe Ganado do
+    describe Granja::Ganado do
 
         before :each do
-          @test1 = Ganado.new(:bovino,:carne,:herbívoro,"1111",284,:macho,9000.01)
-          @test2 = Ganado.new(:porcino,:piel,:omnívoro,"2222",285,:macho,9050.02)
-          @test3 = Ganado.new(:ovino,:leche,:herbívoro,"3333",286,:hembra,7000.03)
-          @test4 = Ganado.new(:caprino,:carne,:herbívoro,"4444",287,:hembra,5000.04)
+          @test1 = Granja::Ganado.new("1111",284,:macho,9000.01,:bovino,:carne,:herbívoro)
+          @test2 = Granja::Ganado.new("2222",285,:macho,9050.02,:porcino,:piel,:omnívoro)
+          @test3 = Granja::Ganado.new("3333",286,:hembra,7000.03, :ovino,:leche,:herbívoro)
+          @test4 = Granja::Ganado.new("4444",287,:hembra,5000.04,:caprino,:carne,:herbívoro)
         end
 
         context "Atributos de la clase Ganado" do
             it "Tiene una clase para representar ganado" do
-                expect(Ganado.new()).not_to be(nil)
+                expect(Granja::Ganado.new()).not_to be(nil)
             end
             it "Tiene un atributo para la raza" do
                 expect(@test1.raza).to eq(:bovino)
@@ -40,16 +40,16 @@ RSpec.describe Granja do
 
         context "Herencia de la clase Ganado" do
             it "Se espera que una instancia de la clase Ganado sea un Ganado" do
-                expect(@test1).to be_a_kind_of (Ganado)
-                expect(@test2).to be_a_kind_of (Ganado)
-                expect(@test3.is_a? Ganado).to eq(true)
-                expect(@test4.is_a? Ganado).to eq(true)
+                expect(@test1).to be_a_kind_of (Granja::Ganado)
+                expect(@test2).to be_a_kind_of (Granja::Ganado)
+                expect(@test3.is_a? Granja::Ganado).to eq(true)
+                expect(@test4.is_a? Granja::Ganado).to eq(true)
             end
             it "Se espera que una instancia de la clase Ganado sea un Animal" do
-                expect(@test1).to be_a_kind_of (Animal)
-                expect(@test2).to be_a_kind_of (Animal)
-                expect(@test3.is_a? Animal).to eq(true)
-                expect(@test4.is_a? Animal).to eq(true)
+                expect(@test1).to be_a_kind_of (Granja::Animal)
+                expect(@test2).to be_a_kind_of (Granja::Animal)
+                expect(@test3.is_a? Granja::Animal).to eq(true)
+                expect(@test4.is_a? Granja::Animal).to eq(true)
             end
             it "Se espera que una instancia de la clase Ganado sea un objeto" do
                 expect(@test1.is_a? Object).to eq(true)
@@ -79,7 +79,7 @@ RSpec.describe Granja do
 
         context "Comparable" do
             it "Existe un módulo comparable" do
-                Ganado.is_a? Comparable
+                expect(Granja::Ganado).is_a?(Comparable)
             end
             it "ganado1 < ganado2" do  
                 expect(@test1 < @test2).to eq(true)

@@ -1,16 +1,16 @@
 RSpec.describe Granja do
-  describe Datos do
+  describe Granja::Datos do
 
     before :each do
-      @test1 = Datos.new("1111","FARMER_A","avicola","muy cara")
-      @test2 = Datos.new("2222","FARMER_B","avicola","cara")
-      @test3 = Datos.new("3333","FARMER_C","ganadera","barata")
-      @test4 = Datos.new("4444","FARMER_D","ganadera","muy barata")
+      @test1 = Granja::Datos.new("1111","FARMER_A",:avicola,"muy cara")
+      @test2 = Granja::Datos.new("2222","FARMER_B",:avicola,"cara")
+      @test3 = Granja::Datos.new("3333","FARMER_C",:ganadera,"barata")
+      @test4 = Granja::Datos.new("4444","FARMER_D",:ganadera,"muy barata")
     end
 
     context "Atributos de la clase Datos" do
       it "Tiene una clase para almacenar los datos de la granja" do
-        expect(Datos.new()).not_to eq(nil)
+        expect(Granja::Datos.new()).not_to eq(nil)
       end
       it "Tiene un atributo para la identificacion de la granja" do
         expect(@test1.identificacion).to eq("1111")
@@ -27,10 +27,10 @@ RSpec.describe Granja do
   
       end
       it "Tiene un atributo para el tipo de granja" do
-        expect(@test1.tipo).to eq("avicola")
-        expect(@test2.tipo).to eq("avicola")
-        expect(@test3.tipo).to eq("ganadera")
-        expect(@test4.tipo).to eq("ganadera")
+        expect(@test1.tipo).to eq(:avicola)
+        expect(@test2.tipo).to eq(:avicola)
+        expect(@test3.tipo).to eq(:ganadera)
+        expect(@test4.tipo).to eq(:ganadera)
   
       end
       it "Tiene un atributo para la descripcion de granja" do
@@ -41,19 +41,19 @@ RSpec.describe Granja do
   
       end
       it "Tiene un atributo para poder impirmir" do
-        expect(@test1.to_s).to eq("la identificacion de la granja es: 1111 \n el nombre es: FARMER_A \n , el tipo es: avicola \n y la descripcion es: muy cara")
-        expect(@test2.to_s).to eq("la identificacion de la granja es: 2222 \n el nombre es: FARMER_B \n , el tipo es: avicola \n y la descripcion es: cara")
-        expect(@test3.to_s).to eq("la identificacion de la granja es: 3333 \n el nombre es: FARMER_C \n , el tipo es: ganadera \n y la descripcion es: barata")
-        expect(@test4.to_s).to eq("la identificacion de la granja es: 4444 \n el nombre es: FARMER_D \n , el tipo es: ganadera \n y la descripcion es: muy barata")
+        expect(@test1.to_s).to eq("la identificacion de la granja es: 1111, el nombre es: FARMER_A, el tipo es: avicola y la descripcion es: muy cara")
+        expect(@test2.to_s).to eq("la identificacion de la granja es: 2222, el nombre es: FARMER_B, el tipo es: avicola y la descripcion es: cara")
+        expect(@test3.to_s).to eq("la identificacion de la granja es: 3333, el nombre es: FARMER_C, el tipo es: ganadera y la descripcion es: barata")
+        expect(@test4.to_s).to eq("la identificacion de la granja es: 4444, el nombre es: FARMER_D, el tipo es: ganadera y la descripcion es: muy barata")
       end
     end
 
     context "Herencia de la clase Datos" do
       it "Se espera que una instancia de la clase Datos sea un Datos" do
-        expect(@test1).to be_a_kind_of(Datos)
-        expect(@test2).to be_a_kind_of(Datos)
-        expect(@test3.is_a? Datos).to eq(true)
-        expect(@test4.is_a? Datos).to eq(true)
+        expect(@test1).to be_a_kind_of(Granja::Datos)
+        expect(@test2).to be_a_kind_of(Granja::Datos)
+        expect(@test3.is_a? Granja::Datos).to eq(true)
+        expect(@test4.is_a? Granja::Datos).to eq(true)
       end
       it "Se espera que una instancia de la clase Datos sea un objeto" do
         expect(@test1).to be_a_kind_of(Object)
