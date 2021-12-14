@@ -2,7 +2,6 @@ RSpec.describe Granja do
     describe Granja::Ganadera do
 
         before :each do
-
             @bovino1 = Granja::Ganado.new("1111",1000,:macho,9000.01,:bovino,:carne,:herbívoro)
             @bovino2 = Granja::Ganado.new("2222",284,:hembra,9000.05,:bovino,:piel,:omnívoro)
             @caprino1 = Granja::Ganado.new("3333",287,:hembra,5000.04,:caprino,:carne,:herbívoro)
@@ -11,18 +10,12 @@ RSpec.describe Granja do
             @ovino2 = Granja::Ganado.new("3333",286,:hembra,7000.03,:ovino,:leche,:herbívoro)
             @porcino1 = Granja::Ganado.new("2222",285,:macho,9050.02,:porcino,:piel,:omnívoro)
             @porcino2 = Granja::Ganado.new("2222",285,:macho,9050.02,:porcino,:piel,:omnívoro)
+            @test5 = Granja::Ganadera.new()
 
             @granja_bovinos = Granja::Ganadera.new(1, "Granja de bovinos","Bovinos muertos",:bovino,:leche,2,50.1,50.1, [@bovino1, @bovino2])
             @granja_ovinos = Granja::Ganadera.new(2,"Granja de ovinos","Ovinos muertos",:ovino,:leche,2,51.2,51.2, [@ovino1, @ovino2])
             @granja_caprinos = Granja::Ganadera.new(3,"Granja de caprinos","Caprinos muertos",:caprino,:sacrificio,2,52.3,52.3, [@caprino1, @caprino2])
             @granja_porcinos = Granja::Ganadera.new(4,"Granja de porcinos","Porcinos muertos",:porcino,:sacrificio,2,53.4,53.4, [@porcino1, @porcino2])
-
-            @test1 = Granja::Ganadera.new(1, "Granja de bovinos","Bovinos muertos",:bovino,:leche,50,50.1,50.1, [])
-            @test2 = Granja::Ganadera.new(2,"Granja de ovinos","Ovinos muertos",:ovino,:leche,51,51.2,51.2, [])
-            @test3 = Granja::Ganadera.new(3,"Granja de caprinos","Caprinos muertos",:caprino,:sacrificio,52,52.3,52.3, [])
-            @test4 = Granja::Ganadera.new(4,"Granja de porcinos","Porcinos muertos",:porcino,:sacrificio,53,53.4,53.4, [])
-            @test5 = Granja::Ganadera.new()
-            @tanda  = [@test1, @test2, @test3, @test4]
         end
 
         context "Atributos de la clase Datos" do
@@ -30,46 +23,46 @@ RSpec.describe Granja do
               expect(Granja::Ganadera.new()).not_to be(nil)
             end
             it "Tiene un atributo para el tipo de ganado (bovino, ovino, caprino o porcino)" do
-                expect(@test1.ganado).to eq(:bovino)
-                expect(@test2.ganado).to eq(:ovino)
-                expect(@test3.ganado).to eq(:caprino)
-                expect(@test4.ganado).to eq(:porcino)
+                expect(@granja_bovinos.ganado).to eq(:bovino)
+                expect(@granja_ovinos.ganado).to eq(:ovino)
+                expect(@granja_caprinos.ganado).to eq(:caprino)
+                expect(@granja_porcinos.ganado).to eq(:porcino)
             end
             it "Tiene un atributo para el destino de los animales (leche, sacrificio)" do
-                expect(@test1.destino).to eq(:leche)
-                expect(@test2.destino).to eq(:leche)
-                expect(@test3.destino).to eq(:sacrificio)
-                expect(@test4.destino).to eq(:sacrificio)
+                expect(@granja_bovinos.destino).to eq(:leche)
+                expect(@granja_ovinos.destino).to eq(:leche)
+                expect(@granja_caprinos.destino).to eq(:sacrificio)
+                expect(@granja_porcinos.destino).to eq(:sacrificio)
             end
             it "Tiene un atributo para el numero de animales de la granja" do
-                expect(@test1.numero).to eq(50)
-                expect(@test2.numero).to eq(51)
-                expect(@test3.numero).to eq(52)
-                expect(@test4.numero).to eq(53)
+                expect(@granja_bovinos.numero).to eq(2)
+                expect(@granja_ovinos.numero).to eq(2)
+                expect(@granja_caprinos.numero).to eq(2)
+                expect(@granja_porcinos.numero).to eq(2)
             end
             it "Tiene un atributo para el precio unitario de los animales" do
-                expect(@test1.precio_unitario).to eq(50.1)
-                expect(@test2.precio_unitario).to eq(51.2)
-                expect(@test3.precio_unitario).to eq(52.3)
-                expect(@test4.precio_unitario).to eq(53.4)
+                expect(@granja_bovinos.precio_unitario).to eq(50.1)
+                expect(@granja_ovinos.precio_unitario).to eq(51.2)
+                expect(@granja_caprinos.precio_unitario).to eq(52.3)
+                expect(@granja_porcinos.precio_unitario).to eq(53.4)
             end
             it "Tiene un atributo para el precio de venta unitario de los animales" do
-                expect(@test1.precio_venta).to eq(50.1)
-                expect(@test2.precio_venta).to eq(51.2)
-                expect(@test3.precio_venta).to eq(52.3)
-                expect(@test4.precio_venta).to eq(53.4)
+                expect(@granja_bovinos.precio_venta).to eq(50.1)
+                expect(@granja_ovinos.precio_venta).to eq(51.2)
+                expect(@granja_caprinos.precio_venta).to eq(52.3)
+                expect(@granja_porcinos.precio_venta).to eq(53.4)
             end
             it "Tiene un atributo para almacenar los animales de la granja" do
-                expect(@test1.almacen).not_to eq(nil)
-                expect(@test2.almacen).not_to eq(nil)
-                expect(@test3.almacen).not_to eq(nil)
-                expect(@test4.almacen).not_to eq(nil)
+                expect(@granja_bovinos.almacen).not_to eq(nil)
+                expect(@granja_ovinos.almacen).not_to eq(nil)
+                expect(@granja_caprinos.almacen).not_to eq(nil)
+                expect(@granja_porcinos.almacen).not_to eq(nil)
             end
             it "Se obtiene una cadena con la informacion de la granja ganadera correctamente formateada" do
-                expect(@test1.to_s).to eq("La granja ganadera tiene como ganado a los bovino, el destino es leche, el numero es 50, con precio unitario de 50.1 y un precio de venta de 50.1")
-                expect(@test2.to_s).to eq("La granja ganadera tiene como ganado a los ovino, el destino es leche, el numero es 51, con precio unitario de 51.2 y un precio de venta de 51.2")
-                expect(@test3.to_s).to eq("La granja ganadera tiene como ganado a los caprino, el destino es sacrificio, el numero es 52, con precio unitario de 52.3 y un precio de venta de 52.3")
-                expect(@test4.to_s).to eq("La granja ganadera tiene como ganado a los porcino, el destino es sacrificio, el numero es 53, con precio unitario de 53.4 y un precio de venta de 53.4")
+                expect(@granja_bovinos.to_s).to eq("La granja ganadera tiene como ganado a los bovino, el destino es leche, el numero es 2, con precio unitario de 50.1 y un precio de venta de 50.1")
+                expect(@granja_ovinos.to_s).to eq("La granja ganadera tiene como ganado a los ovino, el destino es leche, el numero es 2, con precio unitario de 51.2 y un precio de venta de 51.2")
+                expect(@granja_caprinos.to_s).to eq("La granja ganadera tiene como ganado a los caprino, el destino es sacrificio, el numero es 2, con precio unitario de 52.3 y un precio de venta de 52.3")
+                expect(@granja_porcinos.to_s).to eq("La granja ganadera tiene como ganado a los porcino, el destino es sacrificio, el numero es 2, con precio unitario de 53.4 y un precio de venta de 53.4")
             end
         end
 
@@ -78,16 +71,16 @@ RSpec.describe Granja do
                 expect(@granja_bovinos).to be_a_kind_of (Enumerable)
             end
             it "Se espera que una instancia de la clase Ganadera sea una Granja Ganadera" do
-              expect(@granja_bovinos).to be_a_kind_of(Granja::Ganadera)
-              expect(@granja_bovinos).to be_a_kind_of(Granja::Ganadera)
-              expect(@granja_caprinos.is_a? Granja::Ganadera).to eq(true)
-              expect(@granja_caprinos.is_a? Granja::Ganadera).to eq(true)
+                expect(@granja_bovinos).to be_a_kind_of(Granja::Ganadera)
+                expect(@granja_bovinos).to be_a_kind_of(Granja::Ganadera)
+                expect(@granja_caprinos.is_a? Granja::Ganadera).to eq(true)
+                expect(@granja_caprinos.is_a? Granja::Ganadera).to eq(true)
             end
             it "Se espera que una instancia de la clase Ganadera sea un Dato" do
-              expect(@granja_bovinos).to be_a_kind_of(Granja::Datos)
-              expect(@granja_bovinos).to be_a_kind_of(Granja::Datos)
-              expect(@granja_caprinos.is_a? Granja::Datos).to eq(true)
-              expect(@granja_caprinos.is_a? Granja::Datos).to eq(true)
+                expect(@granja_bovinos).to be_a_kind_of(Granja::Datos)
+                expect(@granja_bovinos).to be_a_kind_of(Granja::Datos)
+                expect(@granja_caprinos.is_a? Granja::Datos).to eq(true)
+                expect(@granja_caprinos.is_a? Granja::Datos).to eq(true)
             end
             it "Se espera que una instancia de la clase Ganadera sea un Object" do
                 expect(@granja_bovinos).to be_a_kind_of(Object)
@@ -102,10 +95,10 @@ RSpec.describe Granja do
                 expect(@granja_caprinos.is_a? BasicObject).to eq(true)
             end
             it "No se espera que una instancia de la clase Ganadera sea un Animal" do
-              expect(@granja_bovinos).not_to be_a_kind_of (Granja::Animal)
-              expect(@granja_bovinos).not_to be_a_kind_of (Granja::Animal)
-              expect(@granja_caprinos.is_a? Granja::Animal).to eq(false)
-              expect(@granja_caprinos.is_a? Granja::Animal).to eq(false)
+                expect(@granja_bovinos).not_to be_a_kind_of (Granja::Animal)
+                expect(@granja_bovinos).not_to be_a_kind_of (Granja::Animal)
+                expect(@granja_caprinos.is_a? Granja::Animal).to eq(false)
+                expect(@granja_caprinos.is_a? Granja::Animal).to eq(false)
             end
             it "No se espera que una instancia de la clase Ganadera sea un Ganado" do
                 expect(@granja_bovinos).not_to be_a_kind_of (Granja::Ganado)
@@ -195,16 +188,16 @@ RSpec.describe Granja do
 
         context "Funciones" do
             it "Se podra acceder con []" do
-                expect(@test1[0]).to eq(:bovino)
-                expect(@test1[-6]).to eq(:bovino)
-                expect(@test2[:destino]).to eq(:leche)
-                expect(@test2["numero"]).to eq(51)
+                expect(@granja_bovinos[0]).to eq(:bovino)
+                expect(@granja_ovinos[-6]).to eq(:ovino)
+                expect(@granja_caprinos[:destino]).to eq(:sacrificio)
+                expect(@granja_porcinos["numero"]).to eq(2)
             end
             it "Sistema de Gestion" do
-                expect(@test1.sistema_gestion).to eq(:jaula)
-                expect(@test2.sistema_gestion).to eq(:campo_abierto)
-                expect(@test3.sistema_gestion).to eq(:campo_abierto)
-                expect(@test4.sistema_gestion).to eq(:jaula)
+                expect(@granja_bovinos.sistema_gestion).to eq(:jaula)
+                expect(@granja_ovinos.sistema_gestion).to eq(:campo_abierto)
+                expect(@granja_caprinos.sistema_gestion).to eq(:campo_abierto)
+                expect(@granja_porcinos.sistema_gestion).to eq(:jaula)
             end
             it "Sistema de cuidados" do
                 expect(@granja_bovinos.estimulacion(100.2)).to eq("Hay 1 animales que necesitan una cantidad 100.2 cl de antibioticos mensual")
@@ -219,7 +212,16 @@ RSpec.describe Granja do
                 expect(@granja_porcinos.poblacion(2)).to eq("Hay 2 animales preparados para la reproduccion")
             end 
         end
+
         context "Array" do
+            before :each do
+                @test1 = Granja::Ganadera.new(1, "Granja de bovinos","Bovinos muertos",:bovino,:leche,50,50.1,50.1, [])
+                @test2 = Granja::Ganadera.new(2,"Granja de ovinos","Ovinos muertos",:ovino,:leche,51,51.2,51.2, [])
+                @test3 = Granja::Ganadera.new(3,"Granja de caprinos","Caprinos muertos",:caprino,:sacrificio,52,52.3,52.3, [])
+                @test4 = Granja::Ganadera.new(4,"Granja de porcinos","Porcinos muertos",:porcino,:sacrificio,53,53.4,53.4, [])
+                @test5 = Granja::Ganadera.new()
+                @tanda  = [@test1, @test2, @test3, @test4]
+            end
             it "Maximo y minimo" do
                 expect(@tanda.max).to eq(@test4)
                 expect(@tanda.min).to eq(@test1)
