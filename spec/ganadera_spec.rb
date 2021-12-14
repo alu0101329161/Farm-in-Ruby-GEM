@@ -12,15 +12,15 @@ RSpec.describe Granja do
             @porcino1 = Granja::Ganado.new("2222",285,:macho,9050.02,:porcino,:piel,:omnívoro)
             @porcino2 = Granja::Ganado.new("2222",285,:macho,9050.02,:porcino,:piel,:omnívoro)
 
-            @granja_bovinos = Granja::Ganadera.new(:bovino,:leche,2,50.1,50.1, [@bovino1, @bovino2])
-            @granja_ovinos = Granja::Ganadera.new(:ovino,:leche,2,51.2,51.2, [@ovino1, @ovino2])
-            @granja_caprinos = Granja::Ganadera.new(:caprino,:sacrificio,2,52.3,52.3, [@caprino1, @caprino2])
-            @granja_porcinos = Granja::Ganadera.new(:porcino,:sacrificio,2,53.4,53.4, [@porcino1, @porcino2])
+            @granja_bovinos = Granja::Ganadera.new(1, "Granja de bovinos","Bovinos muertos",:bovino,:leche,2,50.1,50.1, [@bovino1, @bovino2])
+            @granja_ovinos = Granja::Ganadera.new(2,"Granja de ovinos","Ovinos muertos",:ovino,:leche,2,51.2,51.2, [@ovino1, @ovino2])
+            @granja_caprinos = Granja::Ganadera.new(3,"Granja de caprinos","Caprinos muertos",:caprino,:sacrificio,2,52.3,52.3, [@caprino1, @caprino2])
+            @granja_porcinos = Granja::Ganadera.new(4,"Granja de porcinos","Porcinos muertos",:porcino,:sacrificio,2,53.4,53.4, [@porcino1, @porcino2])
 
-            @test1 = Granja::Ganadera.new(:bovino,:leche,50,50.1,50.1, [])
-            @test2 = Granja::Ganadera.new(:ovino,:leche,51,51.2,51.2, [])
-            @test3 = Granja::Ganadera.new(:caprino,:sacrificio,52,52.3,52.3, [])
-            @test4 = Granja::Ganadera.new(:porcino,:sacrificio,53,53.4,53.4, [])
+            @test1 = Granja::Ganadera.new(1, "Granja de bovinos","Bovinos muertos",:bovino,:leche,50,50.1,50.1, [])
+            @test2 = Granja::Ganadera.new(2,"Granja de ovinos","Ovinos muertos",:ovino,:leche,51,51.2,51.2, [])
+            @test3 = Granja::Ganadera.new(3,"Granja de caprinos","Caprinos muertos",:caprino,:sacrificio,52,52.3,52.3, [])
+            @test4 = Granja::Ganadera.new(4,"Granja de porcinos","Porcinos muertos",:porcino,:sacrificio,53,53.4,53.4, [])
             @test5 = Granja::Ganadera.new()
             @tanda  = [@test1, @test2, @test3, @test4]
         end

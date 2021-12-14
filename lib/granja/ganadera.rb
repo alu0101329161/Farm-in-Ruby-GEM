@@ -11,7 +11,7 @@ module Granja
         # Constructor de la clase Ganadera
         # @note se aceptan 9 parametros de tipo int,string y array
         # @return inicializa atributos
-      def initialize(ganado = nil, destino = nil, numero = 0, precio_unitario = 0.0, precio_venta = 0.0, almacen = nil, iden = nil, nombre = "", desc = "")
+      def initialize(iden = nil, nombre = "", desc = "", ganado = nil, destino = nil, numero = 0, precio_unitario = 0.0, precio_venta = 0.0, almacen = nil)
 
           if(ganado == :bovino || ganado == :porcino || ganado == :ovino || ganado == :caprino)
               @ganado = ganado
