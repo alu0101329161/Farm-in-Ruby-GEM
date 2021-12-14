@@ -16,7 +16,7 @@ module Granja
         valor = valor + 1
         end
       end
-      return "Hay #{valor} animales que necesitan una cantidad #{cantidad} de antibioticos mensual"
+      return "Hay #{valor} animales que necesitan una cantidad #{cantidad} cl de antibioticos mensual"
     end
 
     # Metodo para procesar reproduccion

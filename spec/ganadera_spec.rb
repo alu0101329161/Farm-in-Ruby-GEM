@@ -237,10 +237,10 @@ RSpec.describe Granja do
                 expect(@test4.sistema_gestion).to eq(:jaula)
             end
             it "Sistema de cuidados" do
-                expect(@granja_bovinos.estimulacion(100)).to eq("Hay 1 animales que necesitan una cantidad 100 de antibioticos mensual")
-                expect(@granja_ovinos.estimulacion(200)).to eq("Hay 2 animales que necesitan una cantidad 200 de antibioticos mensual")
-                expect(@granja_caprinos.estimulacion(300)).to eq("Hay 2 animales que necesitan una cantidad 300 de antibioticos mensual")
-                expect(@granja_porcinos.estimulacion(400)).to eq("Hay 2 animales que necesitan una cantidad 400 de antibioticos mensual")
+                expect(@granja_bovinos.estimulacion(100.2)).to eq("Hay 1 animales que necesitan una cantidad 100.2 cl de antibioticos mensual")
+                expect(@granja_ovinos.estimulacion(200.2)).to eq("Hay 2 animales que necesitan una cantidad 200.2 cl de antibioticos mensual")
+                expect(@granja_caprinos.estimulacion(300.2)).to eq("Hay 2 animales que necesitan una cantidad 300.2 cl de antibioticos mensual")
+                expect(@granja_porcinos.estimulacion(400.2)).to eq("Hay 2 animales que necesitan una cantidad 400.2 cl de antibioticos mensual")
             end 
             it "Sistema de reproduccion" do
                 expect(@granja_bovinos.poblacion(2)).to eq("Hay 2 animales preparados para la reproduccion")
