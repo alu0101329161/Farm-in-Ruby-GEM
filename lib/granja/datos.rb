@@ -1,3 +1,4 @@
+module Granja
  # Guardar los datos de la granja
   class Datos
     # @overload getter de los atributos
@@ -24,3 +25,4 @@
       "la identificacion de la granja es: #{@identificacion}, el nombre es: #{@nombre}, el tipo es: #{@tipo} y la descripcion es: #{@descripcion}"
     end
   end
+end

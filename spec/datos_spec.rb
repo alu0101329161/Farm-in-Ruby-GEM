@@ -1,16 +1,16 @@
 RSpec.describe Granja do
-  describe Datos do
+  describe Granja::Datos do
 
     before :each do
-      @test1 = Datos.new("1111","FARMER_A",:avicola,"muy cara")
-      @test2 = Datos.new("2222","FARMER_B",:avicola,"cara")
-      @test3 = Datos.new("3333","FARMER_C",:ganadera,"barata")
-      @test4 = Datos.new("4444","FARMER_D",:ganadera,"muy barata")
+      @test1 = Granja::Datos.new("1111","FARMER_A",:avicola,"muy cara")
+      @test2 = Granja::Datos.new("2222","FARMER_B",:avicola,"cara")
+      @test3 = Granja::Datos.new("3333","FARMER_C",:ganadera,"barata")
+      @test4 = Granja::Datos.new("4444","FARMER_D",:ganadera,"muy barata")
     end
 
     context "Atributos de la clase Datos" do
       it "Tiene una clase para almacenar los datos de la granja" do
-        expect(Datos.new()).not_to eq(nil)
+        expect(Granja::Datos.new()).not_to eq(nil)
       end
       it "Tiene un atributo para la identificacion de la granja" do
         expect(@test1.identificacion).to eq("1111")
@@ -50,10 +50,10 @@ RSpec.describe Granja do
 
     context "Herencia de la clase Datos" do
       it "Se espera que una instancia de la clase Datos sea un Datos" do
-        expect(@test1).to be_a_kind_of(Datos)
-        expect(@test2).to be_a_kind_of(Datos)
-        expect(@test3.is_a? Datos).to eq(true)
-        expect(@test4.is_a? Datos).to eq(true)
+        expect(@test1).to be_a_kind_of(Granja::Datos)
+        expect(@test2).to be_a_kind_of(Granja::Datos)
+        expect(@test3.is_a? Granja::Datos).to eq(true)
+        expect(@test4.is_a? Granja::Datos).to eq(true)
       end
       it "Se espera que una instancia de la clase Datos sea un objeto" do
         expect(@test1).to be_a_kind_of(Object)
