@@ -193,7 +193,32 @@ RSpec.describe Granja do
 
         end
 
-
+        context "Funciones" do
+            it "Se podra acceder con []" do
+                expect(@test1[0]).to eq(:bovino)
+                expect(@test1[-6]).to eq(:bovino)
+                expect(@test2[:destino]).to eq(:leche)
+                expect(@test2["numero"]).to eq(51)
+            end
+            it "Sistema de Gestion" do
+                expect(@test1.sistema_gestion).to eq(:jaula)
+                expect(@test2.sistema_gestion).to eq(:campo_abierto)
+                expect(@test3.sistema_gestion).to eq(:campo_abierto)
+                expect(@test4.sistema_gestion).to eq(:jaula)
+            end
+            it "Sistema de cuidados" do
+                expect(@granja_bovinos.estimulacion(100.2)).to eq("Hay 1 animales que necesitan una cantidad 100.2 cl de antibioticos mensual")
+                expect(@granja_ovinos.estimulacion(200.2)).to eq("Hay 2 animales que necesitan una cantidad 200.2 cl de antibioticos mensual")
+                expect(@granja_caprinos.estimulacion(300.2)).to eq("Hay 2 animales que necesitan una cantidad 300.2 cl de antibioticos mensual")
+                expect(@granja_porcinos.estimulacion(400.2)).to eq("Hay 2 animales que necesitan una cantidad 400.2 cl de antibioticos mensual")
+            end 
+            it "Sistema de reproduccion" do
+                expect(@granja_bovinos.poblacion(2)).to eq("Hay 2 animales preparados para la reproduccion")
+                expect(@granja_ovinos.poblacion(2)).to eq("Hay 2 animales preparados para la reproduccion")
+                expect(@granja_caprinos.poblacion(2)).to eq("Hay 2 animales preparados para la reproduccion")
+                expect(@granja_porcinos.poblacion(2)).to eq("Hay 2 animales preparados para la reproduccion")
+            end 
+        end
         context "Array" do
             it "Maximo y minimo" do
                 expect(@tanda.max).to eq(@test4)
@@ -221,33 +246,6 @@ RSpec.describe Granja do
                 expect(@tanda.find_all {|p| p.destino == :sacrificio}).to eq([@test3, @test4])
                 expect(@tanda.find_all {|p| p.ganado == :bovino}).to eq([@test1])
             end
-        end
-
-        context "Funciones" do
-            it "Se podra acceder con []" do
-                expect(@test1[0]).to eq(:bovino)
-                expect(@test1[-6]).to eq(:bovino)
-                expect(@test2[:destino]).to eq(:leche)
-                expect(@test2["numero"]).to eq(51)
-            end
-            it "Sistema de Gestion" do
-                expect(@test1.sistema_gestion).to eq(:jaula)
-                expect(@test2.sistema_gestion).to eq(:campo_abierto)
-                expect(@test3.sistema_gestion).to eq(:campo_abierto)
-                expect(@test4.sistema_gestion).to eq(:jaula)
-            end
-            it "Sistema de cuidados" do
-                expect(@granja_bovinos.estimulacion(100.2)).to eq("Hay 1 animales que necesitan una cantidad 100.2 cl de antibioticos mensual")
-                expect(@granja_ovinos.estimulacion(200.2)).to eq("Hay 2 animales que necesitan una cantidad 200.2 cl de antibioticos mensual")
-                expect(@granja_caprinos.estimulacion(300.2)).to eq("Hay 2 animales que necesitan una cantidad 300.2 cl de antibioticos mensual")
-                expect(@granja_porcinos.estimulacion(400.2)).to eq("Hay 2 animales que necesitan una cantidad 400.2 cl de antibioticos mensual")
-            end 
-            it "Sistema de reproduccion" do
-                expect(@granja_bovinos.poblacion(2)).to eq("Hay 2 animales preparados para la reproduccion")
-                expect(@granja_ovinos.poblacion(2)).to eq("Hay 2 animales preparados para la reproduccion")
-                expect(@granja_caprinos.poblacion(2)).to eq("Hay 2 animales preparados para la reproduccion")
-                expect(@granja_porcinos.poblacion(2)).to eq("Hay 2 animales preparados para la reproduccion")
-            end 
         end
   
     end
