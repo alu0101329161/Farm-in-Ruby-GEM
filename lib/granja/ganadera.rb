@@ -107,16 +107,6 @@ module Granja
           end
       end
 
-      # @note Llama al metodo cuidados de funcion
-      def estimulacion(valor)
-        cuidados(valor, @almacen)
-      end
-
-      # @note Llama al metodo reproduccion de Funcion
-      def poblacion(valor)
-        reproduccion(valor, @almacen)
-      end
-
       # @note Imprime una cadena correctamente formateada
       def to_s
           s = "La granja ganadera tiene como ganado a los #{@ganado}, el destino es #{@destino}, el numero es #{@numero}, con "

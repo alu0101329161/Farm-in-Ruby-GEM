@@ -9,27 +9,15 @@ module Granja
 
     # Metodo para procesar cuidadps
     # @return String
-    def cuidados(cantidad, array)
-      valor = 0
-      array.each do |elemento|
-        if elemento.edad <= 365
-        valor = valor + 1
-        end
-      end
-      return "Hay #{valor} animales que necesitan una cantidad #{cantidad} cl de antibioticos mensual"
+    def cuidados(cantidad, lista)
+      lista.collect{|item| item + cantidad}
     end
 
     # Metodo para procesar reproduccion
     # @return String
-    def reproduccion(cantidad, contenedor)
+    def reproduccion(cantidad, lista)
       dias = cantidad * 30
-      valor = 0
-      contenedor.each do |elemento|
-        if elemento.edad > dias
-        valor = valor + 1
-        end
-      end
-      "Hay #{valor} animales preparados para la reproduccion"
+      lista.select{|item| item.edad > dias}
     end
 
   end

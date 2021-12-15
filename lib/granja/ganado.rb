@@ -49,5 +49,11 @@ module Granja
             @raza == other.raza && @aprovechamiento == other.aprovechamiento && @alimentacion == other.alimentacion
         end
 
+        # Metodo para sumar valor a edad
+        # @return Ganado object
+        def + other
+            Ganado.new(@identificador, @edad, @sexo, @peso + other, @raza, @aprovechamiento, @alimentacion)
+        end
+
     end
 end

@@ -440,29 +440,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#estimulacion-instance_method" title="#estimulacion (instance method)">#<strong>estimulacion</strong>(valor)  &#x21d2; Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'></div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(ganado = nil, destino = nil, numero = 0, precio_unitario = 0.0, precio_venta = 0.0, almacen = nil, iden = nil, nombre = &quot;&quot;, desc = &quot;&quot;)  &#x21d2; Object </a>
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(iden = nil, nombre = &quot;&quot;, desc = &quot;&quot;, ganado = nil, destino = nil, numero = 0, precio_unitario = 0.0, precio_venta = 0.0, almacen = nil)  &#x21d2; Object </a>
     
 
     
@@ -481,28 +459,6 @@
     <span class="summary_desc"><div class='inline'>
 <p>Constructor de la clase Ganadera.</p>
 </div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#poblacion-instance_method" title="#poblacion (instance method)">#<strong>poblacion</strong>(valor)  &#x21d2; Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'></div></span>
   
 </li>
 
@@ -578,7 +534,7 @@
     <div class="method_details first">
   <h3 class="signature first" id="initialize-instance_method">
   
-    #<strong>initialize</strong>(ganado = nil, destino = nil, numero = 0, precio_unitario = 0.0, precio_venta = 0.0, almacen = nil, iden = nil, nombre = &quot;&quot;, desc = &quot;&quot;)  &#x21d2; <tt>Object</tt> 
+    #<strong>initialize</strong>(iden = nil, nombre = &quot;&quot;, desc = &quot;&quot;, ganado = nil, destino = nil, numero = 0, precio_unitario = 0.0, precio_venta = 0.0, almacen = nil)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -635,7 +591,7 @@
     <td>
       <pre class="code"><span class="info file"># File 'lib/granja/ganadera.rb', line 14</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ganado'>ganado</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_destino'>destino</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_numero'>numero</span> <span class='op'>=</span> <span class='int'>0</span><span class='comma'>,</span> <span class='id identifier rubyid_precio_unitario'>precio_unitario</span> <span class='op'>=</span> <span class='float'>0.0</span><span class='comma'>,</span> <span class='id identifier rubyid_precio_venta'>precio_venta</span> <span class='op'>=</span> <span class='float'>0.0</span><span class='comma'>,</span> <span class='id identifier rubyid_almacen'>almacen</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_iden'>iden</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_nombre'>nombre</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_desc'>desc</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_iden'>iden</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_nombre'>nombre</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_desc'>desc</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_ganado'>ganado</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_destino'>destino</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_numero'>numero</span> <span class='op'>=</span> <span class='int'>0</span><span class='comma'>,</span> <span class='id identifier rubyid_precio_unitario'>precio_unitario</span> <span class='op'>=</span> <span class='float'>0.0</span><span class='comma'>,</span> <span class='id identifier rubyid_precio_venta'>precio_venta</span> <span class='op'>=</span> <span class='float'>0.0</span><span class='comma'>,</span> <span class='id identifier rubyid_almacen'>almacen</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
 
     <span class='kw'>if</span><span class='lparen'>(</span><span class='id identifier rubyid_ganado'>ganado</span> <span class='op'>==</span> <span class='symbol'>:bovino</span> <span class='op'>||</span> <span class='id identifier rubyid_ganado'>ganado</span> <span class='op'>==</span> <span class='symbol'>:porcino</span> <span class='op'>||</span> <span class='id identifier rubyid_ganado'>ganado</span> <span class='op'>==</span> <span class='symbol'>:ovino</span> <span class='op'>||</span> <span class='id identifier rubyid_ganado'>ganado</span> <span class='op'>==</span> <span class='symbol'>:caprino</span><span class='rparen'>)</span>
         <span class='ivar'>@ganado</span> <span class='op'>=</span> <span class='id identifier rubyid_ganado'>ganado</span>
@@ -1278,100 +1234,6 @@
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="estimulacion-instance_method">
-  
-    #<strong>estimulacion</strong>(valor)  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-  <div class="note notetag">
-    <strong>Note:</strong>
-    <div class='inline'>
-<p>Llama al metodo cuidados de funcion</p>
-</div>
-  </div>
-
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-111
-112
-113</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/granja/ganadera.rb', line 111</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_estimulacion'>estimulacion</span><span class='lparen'>(</span><span class='id identifier rubyid_valor'>valor</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_cuidados'>cuidados</span><span class='lparen'>(</span><span class='id identifier rubyid_valor'>valor</span><span class='comma'>,</span> <span class='ivar'>@almacen</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="poblacion-instance_method">
-  
-    #<strong>poblacion</strong>(valor)  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-  <div class="note notetag">
-    <strong>Note:</strong>
-    <div class='inline'>
-<p>Llama al metodo reproduccion de Funcion</p>
-</div>
-  </div>
-
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-116
-117
-118</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/granja/ganadera.rb', line 116</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_poblacion'>poblacion</span><span class='lparen'>(</span><span class='id identifier rubyid_valor'>valor</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_reproduccion'>reproduccion</span><span class='lparen'>(</span><span class='id identifier rubyid_valor'>valor</span><span class='comma'>,</span> <span class='ivar'>@almacen</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
   <h3 class="signature " id="sistema_gestion-instance_method">
   
     #<strong>sistema_gestion</strong>  &#x21d2; <tt>Object</tt> 
@@ -1458,14 +1320,14 @@
       <pre class="lines">
 
 
-121
-122
-123
-124
-125</pre>
+111
+112
+113
+114
+115</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/granja/ganadera.rb', line 121</span>
+      <pre class="code"><span class="info file"># File 'lib/granja/ganadera.rb', line 111</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_s'>to_s</span>
     <span class='id identifier rubyid_s'>s</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>La granja ganadera tiene como ganado a los </span><span class='embexpr_beg'>#{</span><span class='ivar'>@ganado</span><span class='embexpr_end'>}</span><span class='tstring_content'>, el destino es </span><span class='embexpr_beg'>#{</span><span class='ivar'>@destino</span><span class='embexpr_end'>}</span><span class='tstring_content'>, el numero es </span><span class='embexpr_beg'>#{</span><span class='ivar'>@numero</span><span class='embexpr_end'>}</span><span class='tstring_content'>, con </span><span class='tstring_end'>&quot;</span></span>
@@ -1482,7 +1344,7 @@
 </div>
 
       <div id="footer">
-  Generated on Tue Dec 14 18:22:52 2021 by
+  Generated on Wed Dec 15 15:58:57 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-2.7.2).
 </div>

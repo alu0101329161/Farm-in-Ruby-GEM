@@ -199,17 +199,17 @@ RSpec.describe Granja do
                 expect(@granja_caprinos.sistema_gestion).to eq(:campo_abierto)
                 expect(@granja_porcinos.sistema_gestion).to eq(:jaula)
             end
-            it "Sistema de cuidados" do
-                expect(@granja_bovinos.estimulacion(100.2)).to eq("Hay 1 animales que necesitan una cantidad 100.2 cl de antibioticos mensual")
-                expect(@granja_ovinos.estimulacion(200.2)).to eq("Hay 2 animales que necesitan una cantidad 200.2 cl de antibioticos mensual")
-                expect(@granja_caprinos.estimulacion(300.2)).to eq("Hay 2 animales que necesitan una cantidad 300.2 cl de antibioticos mensual")
-                expect(@granja_porcinos.estimulacion(400.2)).to eq("Hay 2 animales que necesitan una cantidad 400.2 cl de antibioticos mensual")
+            it "Sistema de cuidados .." do
+                expect(@granja_bovinos.cuidados(10, @granja_bovinos.almacen)).to eq([@bovino1 + 10, @bovino2 + 10])
+                expect(@granja_ovinos.cuidados(20, @granja_ovinos.almacen)).to eq([@ovino1 + 20, @ovino2 + 20])
+                expect(@granja_caprinos.cuidados(30, @granja_caprinos.almacen)).to eq([@caprino1 + 30, @caprino2 + 30])
+                expect(@granja_porcinos.cuidados(40, @granja_porcinos.almacen)).to eq([@porcino1 + 40, @porcino2 + 40])
             end 
             it "Sistema de reproduccion" do
-                expect(@granja_bovinos.poblacion(2)).to eq("Hay 2 animales preparados para la reproduccion")
-                expect(@granja_ovinos.poblacion(2)).to eq("Hay 2 animales preparados para la reproduccion")
-                expect(@granja_caprinos.poblacion(2)).to eq("Hay 2 animales preparados para la reproduccion")
-                expect(@granja_porcinos.poblacion(2)).to eq("Hay 2 animales preparados para la reproduccion")
+                expect(@granja_bovinos.reproduccion(30, @granja_bovinos.almacen)).to eq([@bovino1])
+                expect(@granja_ovinos.reproduccion(2, @granja_ovinos.almacen)).to eq([@ovino1, @ovino2])
+                expect(@granja_caprinos.reproduccion(2, @granja_caprinos.almacen)).to eq([@caprino1, @caprino2])
+                expect(@granja_porcinos.reproduccion(2, @granja_porcinos.almacen)).to eq([@porcino1, @porcino2])
             end 
         end
 
