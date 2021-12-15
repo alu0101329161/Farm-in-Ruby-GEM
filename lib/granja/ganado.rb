@@ -42,6 +42,16 @@ module Granja
         def <=> other 
             @edad <=> other.edad
         end
+        
+        # Metodo para comparar por cualquier valor
+        # @return Bool
+        def > other
+            if(other.instance_of? Ganado)
+                @edad > other.edad
+            else
+                @edad > other
+            end
+        end
 
         # Metodo para comparar todos los valores
         # @return Bool
