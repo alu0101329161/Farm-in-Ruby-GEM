@@ -17,7 +17,7 @@ module Granja
     # @return String
     def reproduccion(cantidad, lista)
       dias = cantidad * 30
-      lista.select{|item| item.edad > dias}
+      lista.select{|item| item > dias}
     end
 
   end
