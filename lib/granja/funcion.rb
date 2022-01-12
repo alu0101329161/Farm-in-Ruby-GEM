@@ -20,5 +20,56 @@ module Granja
       lista.select{|item| item > dias}
     end
 
+    # Metodo para procesar el bienestar del animal
+    # En caso de condiciones optima retorna 100
+    # En caso contratio calculo el ratio
+    def bienestar(granja, condiciones)
+      if(condiciones == CONDICIONES_DE_VIDA)
+        return 100
+      else
+        return  ((granja.almacen.sum{|x| x.peso/x.edad} / granja.numero * 100) / (granja.almacen.collect{|x| x.peso / x.edad}.max * 2)).ceil
+      end
+    end
+
+    # Metodo para procesar Beneficio de una granja
+    # @return Media de peso o edad entre numero de animales
+    def beneficio_neto(granja)
+      if(granja.destino == :sacrificio)
+        return (((granja.almacen.sum{|x| x.peso} /granja.numero) / granja.precio_venta) * 100).round(1)
+      else
+        return (((granja.almacen.sum{|x| x.edad} /granja.numero) / granja.precio_venta) * 100).round(1)
+      end
+    end
+
+    # Metodo para procesar indice de productividad
+    # @return media de evaluacion de 2 valores
+    def indicador_productividad(granja, condiciones)
+      return (evalBienestar(bienestar(granja,condiciones)) + evalBeneficio(beneficio_neto(granja))) / 2
+    end
+    
+    # Metodo para procesar bienestar
+    # Devuelve entero
+    def evalBienestar(value)
+      if value <= 20
+        return 1
+      elsif value >= 80
+        return 3
+      else
+        return 2
+      end
+    end
+
+    # Metodo para procesar Beneficio
+    # Devuelvo entero 
+    def evalBeneficio(value)
+      if value < 10 
+        return 1
+      elsif value > 50
+        return 3
+      else
+        return 2
+      end
+    end
+
   end
 end

@@ -44,6 +44,11 @@ module Granja
           end
       end
 
+      # @note crea un nuevo objetos sin romper encapsulamiento, aumentando precio_venta
+      def acc_precio_venta (value)
+        Ganadera.new(@identificacion,@nombre,@descripcion,@ganado, @destino, @numero, @precio_unitario, @precio_venta + value, @almacen)
+      end
+
       # @note spbrecarga operador [] para Array
       def [] (index)
           case index
@@ -90,13 +95,14 @@ module Granja
     
       # da problemas con el collect en []
       def == other
-          @ganado == other.ganado && @destino == other.destino && @numero == other.numero
+          @ganado == other.ganado && @destino == other.destino && @numero == other.numero 
       end
 
       # Usar collect
       def * value
          Ganadera.new(@ganado, @destino, @numero*value, @precio_unitario, @precio_venta)
       end
+
 
       # @note indica el valor de la constante dependiendo del tipo de ganado
       def sistema_gestion
