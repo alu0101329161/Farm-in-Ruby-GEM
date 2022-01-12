@@ -256,8 +256,10 @@ RSpec.describe Granja do
                 granja_porcinos = Granja::Ganadera.new(4,"Granja de porcinos","Porcinos muertos",:porcino,:sacrificio,2,53.4,59.4, [@porcino1, @porcino2])
                 cooperativa1 = [granja_bovinos,granja_ovinos,granja_caprinos,granja_porcinos]
                 max = @cooperativa.max{|x,y| x.indicador_productividad(x, x.sistema_gestion) <=> y.indicador_productividad(y, y.sistema_gestion)}
+                #Comparamos un array que contiene los precios de venta
                 expect(@cooperativa.collect{|x| x.acc_precio_venta((max.precio_venta / 10).ceil)}.collect{|x| x.precio_venta}).to eq(cooperativa1.collect{|x| x.precio_venta})
-
+                #Comparamos las dos cooperativas
+                expect(@cooperativa.collect{|x| x.acc_precio_venta((max.precio_venta / 10))}).to eq(cooperativa1)
             end
             it "Metodo sort" do
                 cooperativa = [@test2, @test1, @test4, @test3]
