@@ -219,16 +219,16 @@ RSpec.describe Granja do
                 expect(@granja_porcinos.bienestar(@granja_porcinos,@granja_porcinos.sistema_gestion)).to eq(50)
             end 
             it "Beneficio Neto" do
-                expect(@granja_bovinos.beneficio_neto(@granja_bovinos)).to eq(1281.4)
-                expect(@granja_ovinos.beneficio_neto(@granja_ovinos)).to eq(558.6)
-                expect(@granja_caprinos.beneficio_neto(@granja_caprinos)).to eq(9560.3)
-                expect(@granja_porcinos.beneficio_neto(@granja_porcinos)).to eq(16947.6)
+                expect(@granja_bovinos.beneficio_neto(@granja_bovinos)).to eq(7.8)
+                expect(@granja_ovinos.beneficio_neto(@granja_ovinos)).to eq(17.9)
+                expect(@granja_caprinos.beneficio_neto(@granja_caprinos)).to eq(1.0)
+                expect(@granja_porcinos.beneficio_neto(@granja_porcinos)).to eq(0.6)
             end
             it "Indicador productividad" do
-                expect(@granja_bovinos.indicador_productividad(@granja_bovinos,@granja_bovinos.sistema_gestion)).to eq(2)
-                expect(@granja_ovinos.indicador_productividad(@granja_ovinos,@granja_ovinos.sistema_gestion)).to eq(3)
-                expect(@granja_caprinos.indicador_productividad(@granja_caprinos,@granja_caprinos.sistema_gestion)).to eq(3)
-                expect(@granja_porcinos.indicador_productividad(@granja_porcinos,@granja_porcinos.sistema_gestion)).to eq(2)
+                expect(@granja_bovinos.indicador_productividad(@granja_bovinos,@granja_bovinos.sistema_gestion)).to eq(1)
+                expect(@granja_ovinos.indicador_productividad(@granja_ovinos,@granja_ovinos.sistema_gestion)).to eq(2)
+                expect(@granja_caprinos.indicador_productividad(@granja_caprinos,@granja_caprinos.sistema_gestion)).to eq(2)
+                expect(@granja_porcinos.indicador_productividad(@granja_porcinos,@granja_porcinos.sistema_gestion)).to eq(1)
             end
         end
 

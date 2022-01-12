@@ -35,9 +35,9 @@ module Granja
     # @return Media de peso o edad entre numero de animales
     def beneficio_neto(granja)
       if(granja.destino == :sacrificio)
-        return (((granja.almacen.sum{|x| x.peso} /granja.numero) / granja.precio_venta) * 100).round(1)
+        return ((granja.precio_venta / (granja.almacen.sum{|x| x.peso} /granja.numero)) * 100).round(1)
       else
-        return (((granja.almacen.sum{|x| x.edad} /granja.numero) / granja.precio_venta) * 100).round(1)
+        return ((granja.precio_venta / (granja.almacen.sum{|x| x.edad} /granja.numero)) * 100).round(1)
       end
     end
 
