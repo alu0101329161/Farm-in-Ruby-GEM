@@ -213,22 +213,30 @@ RSpec.describe Granja do
                 expect(@granja_porcinos.reproduccion(2, @granja_porcinos.almacen)).to eq([@porcino1, @porcino2])
             end
             it "Bienestar Animal" do
-                expect(@granja_bovinos.bienestar(@granja_bovinos,@granja_bovinos.sistema_gestion)).to eq(33)
-                expect(@granja_ovinos.bienestar(@granja_ovinos,@granja_ovinos.sistema_gestion)).to eq(100)
-                expect(@granja_caprinos.bienestar(@granja_caprinos,@granja_caprinos.sistema_gestion)).to eq(100)
-                expect(@granja_porcinos.bienestar(@granja_porcinos,@granja_porcinos.sistema_gestion)).to eq(50)
+                expect(@granja_bovinos.bienestar(@granja_bovinos,Granja::Funcion::CONDICIONES_DE_VIDA)).to eq(64.2)
+                expect(@granja_bovinos.bienestar(@granja_bovinos,Granja::Funcion::CONDICIONES_DE_VIDA1)).to eq(32.1)
+                expect(@granja_ovinos.bienestar(@granja_ovinos,Granja::Funcion::CONDICIONES_DE_VIDA)).to eq(100)
+                expect(@granja_ovinos.bienestar(@granja_ovinos,Granja::Funcion::CONDICIONES_DE_VIDA1)).to eq(50)
+                expect(@granja_caprinos.bienestar(@granja_caprinos,Granja::Funcion::CONDICIONES_DE_VIDA)).to eq(100)
+                expect(@granja_caprinos.bienestar(@granja_caprinos,Granja::Funcion::CONDICIONES_DE_VIDA1)).to eq(50)
+                expect(@granja_porcinos.bienestar(@granja_porcinos,Granja::Funcion::CONDICIONES_DE_VIDA)).to eq(100)
+                expect(@granja_porcinos.bienestar(@granja_porcinos,Granja::Funcion::CONDICIONES_DE_VIDA1)).to eq(50)
             end 
             it "Beneficio Neto" do
-                expect(@granja_bovinos.beneficio_neto(@granja_bovinos)).to eq(7.8)
-                expect(@granja_ovinos.beneficio_neto(@granja_ovinos)).to eq(17.9)
-                expect(@granja_caprinos.beneficio_neto(@granja_caprinos)).to eq(1.0)
-                expect(@granja_porcinos.beneficio_neto(@granja_porcinos)).to eq(0.6)
+                expect(@granja_bovinos.beneficio_neto(@granja_bovinos)).to eq(5002.2)
+                expect(@granja_ovinos.beneficio_neto(@granja_ovinos)).to eq(5102.1)
+                expect(@granja_caprinos.beneficio_neto(@granja_caprinos)).to eq(5229.0)
+                expect(@granja_porcinos.beneficio_neto(@granja_porcinos)).to eq(5339.4)
             end
             it "Indicador productividad" do
-                expect(@granja_bovinos.indicador_productividad(@granja_bovinos,@granja_bovinos.sistema_gestion)).to eq(1)
-                expect(@granja_ovinos.indicador_productividad(@granja_ovinos,@granja_ovinos.sistema_gestion)).to eq(2)
-                expect(@granja_caprinos.indicador_productividad(@granja_caprinos,@granja_caprinos.sistema_gestion)).to eq(2)
-                expect(@granja_porcinos.indicador_productividad(@granja_porcinos,@granja_porcinos.sistema_gestion)).to eq(1)
+                expect(@granja_bovinos.indicador_productividad(@granja_bovinos,Granja::Funcion::CONDICIONES_DE_VIDA)).to eq(2)
+                expect(@granja_bovinos.indicador_productividad(@granja_bovinos,Granja::Funcion::CONDICIONES_DE_VIDA1)).to eq(2)
+                expect(@granja_ovinos.indicador_productividad(@granja_ovinos,Granja::Funcion::CONDICIONES_DE_VIDA)).to eq(3)
+                expect(@granja_ovinos.indicador_productividad(@granja_ovinos,Granja::Funcion::CONDICIONES_DE_VIDA1)).to eq(2)
+                expect(@granja_caprinos.indicador_productividad(@granja_caprinos,Granja::Funcion::CONDICIONES_DE_VIDA)).to eq(3)
+                expect(@granja_caprinos.indicador_productividad(@granja_caprinos,Granja::Funcion::CONDICIONES_DE_VIDA1)).to eq(2)
+                expect(@granja_porcinos.indicador_productividad(@granja_porcinos,Granja::Funcion::CONDICIONES_DE_VIDA)).to eq(3)
+                expect(@granja_porcinos.indicador_productividad(@granja_porcinos,Granja::Funcion::CONDICIONES_DE_VIDA1)).to eq(2)
             end
         end
 
@@ -240,26 +248,30 @@ RSpec.describe Granja do
                 @test4 = Granja::Ganadera.new(4,"Granja de porcinos","Porcinos muertos",:porcino,:sacrificio,53,53.4,53.4, [])
                 @test5 = Granja::Ganadera.new()
                 @tanda  = [@test1, @test2, @test3, @test4]
-
             end
             it "Maximo y minimo" do
+                condiciones = [Granja::Funcion::CONDICIONES_DE_VIDA, Granja::Funcion::CONDICIONES_DE_VIDA1, Granja::Funcion::CONDICIONES_DE_VIDA2]
+                all = @cooperativa.zip(condiciones)
+                expect(all.max_by{|x| x[0].indicador_productividad(x[0], x[1])}).to eq([@granja_bovinos,Granja::Funcion::CONDICIONES_DE_VIDA])
+                
                 expect(@cooperativa.max{|x,y| x.indicador_productividad(x, x.sistema_gestion) <=> y.indicador_productividad(y, y.sistema_gestion)}).to eq(@granja_ovinos)
                 expect(@cooperativa.max_by{|x| x.indicador_productividad(x, x.sistema_gestion)}).to eq(@granja_ovinos)
                 expect(@cooperativa.min{|x,y| x.indicador_productividad(x, x.sistema_gestion) <=> y.indicador_productividad(y, y.sistema_gestion)}).to eq(@granja_bovinos)
                 expect(@cooperativa.min_by{|x| x.indicador_productividad(x, x.sistema_gestion)}).to eq(@granja_bovinos)
             end
             it "Incrementar Precio de venta" do
-                
                 granja_bovinos = Granja::Ganadera.new(1, "Granja de bovinos","Bovinos muertos",:bovino,:leche,2,50.1,56.1, [@bovino1, @bovino2])
                 granja_ovinos = Granja::Ganadera.new(2,"Granja de ovinos","Ovinos muertos",:ovino,:leche,2,51.2,57.2, [@ovino1, @ovino2])
                 granja_caprinos = Granja::Ganadera.new(3,"Granja de caprinos","Caprinos muertos",:caprino,:sacrificio,2,52.3,58.3, [@caprino1, @caprino2])
                 granja_porcinos = Granja::Ganadera.new(4,"Granja de porcinos","Porcinos muertos",:porcino,:sacrificio,2,53.4,59.4, [@porcino1, @porcino2])
                 cooperativa1 = [granja_bovinos,granja_ovinos,granja_caprinos,granja_porcinos]
-                max = @cooperativa.max{|x,y| x.indicador_productividad(x, x.sistema_gestion) <=> y.indicador_productividad(y, y.sistema_gestion)}
+
+                condiciones = [Granja::Funcion::CONDICIONES_DE_VIDA, Granja::Funcion::CONDICIONES_DE_VIDA1, Granja::Funcion::CONDICIONES_DE_VIDA2]
+                all = @cooperativa.zip(condiciones)
+                max = all.max_by{|x| x[0].indicador_productividad(x[0], x[1])}
+
                 #Comparamos un array que contiene los precios de venta
-                expect(@cooperativa.collect{|x| x.acc_precio_venta((max.precio_venta / 10).ceil)}.collect{|x| x.precio_venta}).to eq(cooperativa1.collect{|x| x.precio_venta})
-                #Comparamos las dos cooperativas
-                expect(@cooperativa.collect{|x| x.acc_precio_venta((max.precio_venta / 10))}).to eq(cooperativa1)
+                expect(@cooperativa.collect{|x| x.acc_precio_venta((max[0].precio_venta / 10).ceil)}.collect{|x| x.precio_venta}).to eq(cooperativa1.collect{|x| x.precio_venta})
             end
             it "Metodo sort" do
                 cooperativa = [@test2, @test1, @test4, @test3]

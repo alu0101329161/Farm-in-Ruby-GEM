@@ -24,10 +24,14 @@ module Granja
     # En caso de condiciones optima retorna 100
     # En caso contratio calculo el ratio
     def bienestar(granja, condiciones)
+
+      max = granja.almacen.collect{|x| x.peso / x.edad}.max
+      ratio = granja.almacen.sum{|x| x.peso/x.edad} / granja.numero.to_f
+
       if(condiciones == CONDICIONES_DE_VIDA)
-        return 100
+        return ((ratio * 100) / max).round(1)
       else
-        return  (((granja.almacen.sum{|x| x.peso/x.edad} / granja.numero.to_f * 100) / (granja.almacen.collect{|x| x.peso / x.edad}.max) * 0.5)).ceil
+        return  ((ratio * 50) / max).round(1)
       end
     end
 
@@ -35,9 +39,9 @@ module Granja
     # @return Media de peso o edad entre numero de animales
     def beneficio_neto(granja)
       if(granja.destino == :sacrificio)
-        return ((granja.precio_venta / (granja.almacen.sum{|x| x.peso} /granja.numero.to_f)) * 100).round(1)
+        return ((granja.precio_venta - granja.precio_unitario / (granja.almacen.sum{|x| x.peso} /granja.numero.to_f)) * 100).round(1)
       else
-        return ((granja.precio_venta / (granja.almacen.sum{|x| x.edad} /granja.numero.to_f)) * 100).round(1)
+        return ((granja.precio_venta - granja.precio_unitario / (granja.almacen.sum{|x| x.edad} /granja.numero.to_f)) * 100).round(1)
       end
     end
 
