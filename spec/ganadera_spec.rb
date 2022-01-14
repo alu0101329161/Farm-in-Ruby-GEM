@@ -262,7 +262,7 @@ RSpec.describe Granja do
 
                 condiciones = [Granja::Funcion::CONDICIONES_DE_VIDA, Granja::Funcion::CONDICIONES_DE_VIDA1, Granja::Funcion::CONDICIONES_DE_VIDA2]
                 all = @cooperativa.zip(condiciones)
-                max = all.max_by{|x| x[0].indicador_productividad(x[0], x[1])}
+                max = all.max_by{|x,c| x.indicador_productividad(x, c)}
 
                 #Comparamos un array que contiene los precios de venta
                 expect(@cooperativa.collect{|x| x.acc_precio_venta((max[0].precio_venta / 10).ceil)}.collect{|x| x.precio_venta}).to eq(cooperativa1.collect{|x| x.precio_venta})
