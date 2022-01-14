@@ -229,8 +229,6 @@ RSpec.describe Granja do
                 expect(@granja_porcinos.beneficio_neto(@granja_porcinos)).to eq(5339.4)
             end
             it "Indicador productividad" do
-                expect(@granja_bovinos.indicador_productividad(@granja_bovinos,Granja::Funcion::CONDICIONES_DE_VIDA)).to eq(2)
-                expect(@granja_bovinos.indicador_productividad(@granja_bovinos,Granja::Funcion::CONDICIONES_DE_VIDA1)).to eq(2)
                 expect(@granja_ovinos.indicador_productividad(@granja_ovinos,Granja::Funcion::CONDICIONES_DE_VIDA)).to eq(3)
                 expect(@granja_ovinos.indicador_productividad(@granja_ovinos,Granja::Funcion::CONDICIONES_DE_VIDA1)).to eq(2)
                 expect(@granja_caprinos.indicador_productividad(@granja_caprinos,Granja::Funcion::CONDICIONES_DE_VIDA)).to eq(3)
@@ -253,11 +251,7 @@ RSpec.describe Granja do
                 condiciones = [Granja::Funcion::CONDICIONES_DE_VIDA, Granja::Funcion::CONDICIONES_DE_VIDA1, Granja::Funcion::CONDICIONES_DE_VIDA2]
                 all = @cooperativa.zip(condiciones)
                 expect(all.max_by{|x| x[0].indicador_productividad(x[0], x[1])}).to eq([@granja_bovinos,Granja::Funcion::CONDICIONES_DE_VIDA])
-                
-                expect(@cooperativa.max{|x,y| x.indicador_productividad(x, x.sistema_gestion) <=> y.indicador_productividad(y, y.sistema_gestion)}).to eq(@granja_ovinos)
-                expect(@cooperativa.max_by{|x| x.indicador_productividad(x, x.sistema_gestion)}).to eq(@granja_ovinos)
-                expect(@cooperativa.min{|x,y| x.indicador_productividad(x, x.sistema_gestion) <=> y.indicador_productividad(y, y.sistema_gestion)}).to eq(@granja_bovinos)
-                expect(@cooperativa.min_by{|x| x.indicador_productividad(x, x.sistema_gestion)}).to eq(@granja_bovinos)
+                expect(all.max_by{|g,c| g.indicador_productividad(g, c)}).to eq([@granja_bovinos,Granja::Funcion::CONDICIONES_DE_VIDA])
             end
             it "Incrementar Precio de venta" do
                 granja_bovinos = Granja::Ganadera.new(1, "Granja de bovinos","Bovinos muertos",:bovino,:leche,2,50.1,56.1, [@bovino1, @bovino2])
