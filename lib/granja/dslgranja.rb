@@ -1,10 +1,11 @@
 
-
 module Granja
     class DSLGranja
 
-        def initialize(identificador, &block)
-            @datos = []
+        attr_reader :datos, :animales
+
+        def initialize(identificador = nil, &block)
+            @datos = [identificador]
             @animales = []
             
             if block_given?  
@@ -16,23 +17,32 @@ module Granja
             end
         end
 
-        def ejemplares(text, options = {})
-            ejemplar = text
-            ejemplar << " (#{options[:edad]})" if options[:edad]
-            ejemplar << " (#{options[:peso]})" if options[:peso]
-            ejemplar << " (#{options[:precio_compra]})" if options[:precio_compra]
-            ejemplar << " (#{options[:precio_venta]})" if options[:precio_venta]
+        def ejemplar(identificacion, options = {})
+            ejemplar = []
+            ejemplar << identificacion
+            ejemplar << options[:edad] if options[:edad]
+            ejemplar << options[:peso] if options[:peso]
+            ejemplar << options[:precio_compra] if options[:precio_compra]
+            ejemplar << options[:precio_venta] if options[:precio_venta]
         
-            @animales << ejemplares
+            @animales << ejemplar
         end
 
-        def datos(text, options = {})
-            dato = text
-            dato << " (#{options[:amount]})" if options[:amount]
-            dato << " (#{options[:descripcion]})" if options[:descripcion]
-            dato << " (#{options[:tipo]})" if options[:tipo]
+        def dato(text, options = {})
+            @datos << text
+            @datos << options[:descripcion] if options[:descripcion]
+            @datos << options[:tipo] if options[:tipo]
+        end
 
-            @datos << dato
+        def to_s
+            output = "La granja de identificacion #{@datos[0]} , con los datos de nombre #{@datos[1]}, descripcion #{@datos[2]} y tipo #{@datos[3]}\n\n"
+            output << "Tiene los siguientes ejemplares: \n\n"
+            @animales.each_with_index do |ejemplar, index|
+              output << "Ejemplar #{index + 1} Su identificador es #{ejemplar[0]}, su edad es #{ejemplar[1]},"
+              output << "su peso es #{ejemplar[2]} , su precio de compra #{ejemplar[3]}, y de venta es #{ejemplar[4]}\n"
+            end
+        
+            return output
         end
     end
 end
