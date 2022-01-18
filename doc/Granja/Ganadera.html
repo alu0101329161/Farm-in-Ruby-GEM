@@ -396,6 +396,28 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#acc_precio_venta-instance_method" title="#acc_precio_venta (instance method)">#<strong>acc_precio_venta</strong>(value)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#add_animal-instance_method" title="#add_animal (instance method)">#<strong>add_animal</strong>(other)  &#x21d2; Object </a>
     
 
@@ -521,7 +543,7 @@
   
   
   <h3 class="inherited">Methods included from <span class='object_link'><a href="Funcion.html" title="Granja::Funcion (module)">Funcion</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="Funcion.html#cuidados-instance_method" title="Granja::Funcion#cuidados (method)">#cuidados</a></span>, <span class='object_link'><a href="Funcion.html#reproduccion-instance_method" title="Granja::Funcion#reproduccion (method)">#reproduccion</a></span></p>
+  <p class="inherited"><span class='object_link'><a href="Funcion.html#beneficio_neto-instance_method" title="Granja::Funcion#beneficio_neto (method)">#beneficio_neto</a></span>, <span class='object_link'><a href="Funcion.html#bienestar-instance_method" title="Granja::Funcion#bienestar (method)">#bienestar</a></span>, <span class='object_link'><a href="Funcion.html#cuidados-instance_method" title="Granja::Funcion#cuidados (method)">#cuidados</a></span>, <span class='object_link'><a href="Funcion.html#evalBeneficio-instance_method" title="Granja::Funcion#evalBeneficio (method)">#evalBeneficio</a></span>, <span class='object_link'><a href="Funcion.html#evalBienestar-instance_method" title="Granja::Funcion#evalBienestar (method)">#evalBienestar</a></span>, <span class='object_link'><a href="Funcion.html#indicador_productividad-instance_method" title="Granja::Funcion#indicador_productividad (method)">#indicador_productividad</a></span>, <span class='object_link'><a href="Funcion.html#reproduccion-instance_method" title="Granja::Funcion#reproduccion (method)">#reproduccion</a></span></p>
 
   
   
@@ -914,12 +936,12 @@
       <pre class="lines">
 
 
-97
-98
-99</pre>
+102
+103
+104</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/granja/ganadera.rb', line 97</span>
+      <pre class="code"><span class="info file"># File 'lib/granja/ganadera.rb', line 102</span>
 
 <span class='kw'>def</span> <span class='op'>*</span> <span class='id identifier rubyid_value'>value</span>
    <span class='const'><span class='object_link'><a href="" title="Granja::Ganadera (class)">Ganadera</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Granja::Ganadera#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='ivar'>@ganado</span><span class='comma'>,</span> <span class='ivar'>@destino</span><span class='comma'>,</span> <span class='ivar'>@numero</span><span class='op'>*</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='ivar'>@precio_unitario</span><span class='comma'>,</span> <span class='ivar'>@precio_venta</span><span class='rparen'>)</span>
@@ -955,12 +977,12 @@
       <pre class="lines">
 
 
-87
-88
-89</pre>
+92
+93
+94</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/granja/ganadera.rb', line 87</span>
+      <pre class="code"><span class="info file"># File 'lib/granja/ganadera.rb', line 92</span>
 
 <span class='kw'>def</span> <span class='op'>&lt;=&gt;</span> <span class='id identifier rubyid_other'>other</span> 
    <span class='ivar'>@numero</span> <span class='op'>&lt;=&gt;</span> <span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_numero'>numero</span> 
@@ -996,15 +1018,15 @@
       <pre class="lines">
 
 
-92
-93
-94</pre>
+97
+98
+99</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/granja/ganadera.rb', line 92</span>
+      <pre class="code"><span class="info file"># File 'lib/granja/ganadera.rb', line 97</span>
 
 <span class='kw'>def</span> <span class='op'>==</span> <span class='id identifier rubyid_other'>other</span>
-    <span class='ivar'>@ganado</span> <span class='op'>==</span> <span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_ganado'>ganado</span> <span class='op'>&amp;&amp;</span> <span class='ivar'>@destino</span> <span class='op'>==</span> <span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_destino'>destino</span> <span class='op'>&amp;&amp;</span> <span class='ivar'>@numero</span> <span class='op'>==</span> <span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_numero'>numero</span>
+    <span class='ivar'>@ganado</span> <span class='op'>==</span> <span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_ganado'>ganado</span> <span class='op'>&amp;&amp;</span> <span class='ivar'>@destino</span> <span class='op'>==</span> <span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_destino'>destino</span> <span class='op'>&amp;&amp;</span> <span class='ivar'>@numero</span> <span class='op'>==</span> <span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_numero'>numero</span> 
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1043,11 +1065,6 @@
       <pre class="lines">
 
 
-48
-49
-50
-51
-52
 53
 54
 55
@@ -1072,10 +1089,15 @@
 74
 75
 76
-77</pre>
+77
+78
+79
+80
+81
+82</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/granja/ganadera.rb', line 48</span>
+      <pre class="code"><span class="info file"># File 'lib/granja/ganadera.rb', line 53</span>
 
 <span class='kw'>def</span> <span class='op'>[]</span> <span class='lparen'>(</span><span class='id identifier rubyid_index'>index</span><span class='rparen'>)</span>
     <span class='kw'>case</span> <span class='id identifier rubyid_index'>index</span>
@@ -1106,6 +1128,53 @@
       <span class='kw'>else</span>
         <span class='kw'>nil</span>
     <span class='kw'>end</span> 
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="acc_precio_venta-instance_method">
+  
+    #<strong>acc_precio_venta</strong>(value)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>crea un nuevo objetos sin romper encapsulamiento, aumentando precio_venta</p>
+</div>
+  </div>
+
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+48
+49
+50</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/granja/ganadera.rb', line 48</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_acc_precio_venta'>acc_precio_venta</span> <span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="" title="Granja::Ganadera (class)">Ganadera</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Granja::Ganadera#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='ivar'>@identificacion</span><span class='comma'>,</span><span class='ivar'>@nombre</span><span class='comma'>,</span><span class='ivar'>@descripcion</span><span class='comma'>,</span><span class='ivar'>@ganado</span><span class='comma'>,</span> <span class='ivar'>@destino</span><span class='comma'>,</span> <span class='ivar'>@numero</span><span class='comma'>,</span> <span class='ivar'>@precio_unitario</span><span class='comma'>,</span> <span class='ivar'>@precio_venta</span> <span class='op'>+</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='ivar'>@almacen</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1214,14 +1283,14 @@
       <pre class="lines">
 
 
-80
-81
-82
-83
-84</pre>
+85
+86
+87
+88
+89</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/granja/ganadera.rb', line 80</span>
+      <pre class="code"><span class="info file"># File 'lib/granja/ganadera.rb', line 85</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_each'>each</span>
     <span class='kw'>yield</span> <span class='ivar'>@numero</span>
@@ -1265,16 +1334,16 @@
       <pre class="lines">
 
 
-102
-103
-104
-105
-106
-107
-108</pre>
+108
+109
+110
+111
+112
+113
+114</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/granja/ganadera.rb', line 102</span>
+      <pre class="code"><span class="info file"># File 'lib/granja/ganadera.rb', line 108</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_sistema_gestion'>sistema_gestion</span>
     <span class='kw'>if</span><span class='lparen'>(</span><span class='ivar'>@ganado</span> <span class='op'>==</span> <span class='symbol'>:bovino</span> <span class='op'>||</span> <span class='ivar'>@ganado</span> <span class='op'>==</span> <span class='symbol'>:porcino</span><span class='rparen'>)</span>
@@ -1320,14 +1389,14 @@
       <pre class="lines">
 
 
-111
-112
-113
-114
-115</pre>
+117
+118
+119
+120
+121</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/granja/ganadera.rb', line 111</span>
+      <pre class="code"><span class="info file"># File 'lib/granja/ganadera.rb', line 117</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_s'>to_s</span>
     <span class='id identifier rubyid_s'>s</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>La granja ganadera tiene como ganado a los </span><span class='embexpr_beg'>#{</span><span class='ivar'>@ganado</span><span class='embexpr_end'>}</span><span class='tstring_content'>, el destino es </span><span class='embexpr_beg'>#{</span><span class='ivar'>@destino</span><span class='embexpr_end'>}</span><span class='tstring_content'>, el numero es </span><span class='embexpr_beg'>#{</span><span class='ivar'>@numero</span><span class='embexpr_end'>}</span><span class='tstring_content'>, con </span><span class='tstring_end'>&quot;</span></span>
@@ -1344,7 +1413,7 @@
 </div>
 
       <div id="footer">
-  Generated on Wed Dec 15 15:58:57 2021 by
+  Generated on Tue Jan 18 17:12:44 2022 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-2.7.2).
 </div>

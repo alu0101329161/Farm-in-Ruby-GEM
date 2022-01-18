@@ -160,6 +160,54 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#beneficio_neto-instance_method" title="#beneficio_neto (instance method)">#<strong>beneficio_neto</strong>(granja)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Metodo para procesar Beneficio de una granja.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#bienestar-instance_method" title="#bienestar (instance method)">#<strong>bienestar</strong>(granja, condiciones)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Metodo para procesar el bienestar del animal En caso de condiciones optima retorna 100 En caso contratio calculo el ratio.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#cuidados-instance_method" title="#cuidados (instance method)">#<strong>cuidados</strong>(cantidad, lista)  &#x21d2; Object </a>
     
 
@@ -176,6 +224,78 @@
   
     <span class="summary_desc"><div class='inline'>
 <p>Metodo para procesar cuidadps.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#evalBeneficio-instance_method" title="#evalBeneficio (instance method)">#<strong>evalBeneficio</strong>(value)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Metodo para procesar Beneficio Devuelvo entero.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#evalBienestar-instance_method" title="#evalBienestar (instance method)">#<strong>evalBienestar</strong>(value)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Metodo para procesar bienestar Devuelve entero.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#indicador_productividad-instance_method" title="#indicador_productividad (instance method)">#<strong>indicador_productividad</strong>(granja, condiciones)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Metodo para procesar indice de productividad.</p>
 </div></span>
   
 </li>
@@ -215,7 +335,131 @@
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="cuidados-instance_method">
+  <h3 class="signature first" id="beneficio_neto-instance_method">
+  
+    #<strong>beneficio_neto</strong>(granja)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Metodo para procesar Beneficio de una granja</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>Media de peso o edad entre numero de animales</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+40
+41
+42
+43
+44
+45
+46</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/granja/funcion.rb', line 40</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_beneficio_neto'>beneficio_neto</span><span class='lparen'>(</span><span class='id identifier rubyid_granja'>granja</span><span class='rparen'>)</span>
+  <span class='kw'>if</span><span class='lparen'>(</span><span class='id identifier rubyid_granja'>granja</span><span class='period'>.</span><span class='id identifier rubyid_destino'>destino</span> <span class='op'>==</span> <span class='symbol'>:sacrificio</span><span class='rparen'>)</span>
+    <span class='kw'>return</span> <span class='lparen'>(</span><span class='lparen'>(</span><span class='lparen'>(</span><span class='id identifier rubyid_granja'>granja</span><span class='period'>.</span><span class='id identifier rubyid_precio_venta'>precio_venta</span> <span class='op'>-</span> <span class='id identifier rubyid_granja'>granja</span><span class='period'>.</span><span class='id identifier rubyid_precio_unitario'>precio_unitario</span><span class='rparen'>)</span> <span class='op'>/</span> <span class='lparen'>(</span><span class='id identifier rubyid_granja'>granja</span><span class='period'>.</span><span class='id identifier rubyid_almacen'>almacen</span><span class='period'>.</span><span class='id identifier rubyid_sum'>sum</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_x'>x</span><span class='op'>|</span> <span class='id identifier rubyid_x'>x</span><span class='period'>.</span><span class='id identifier rubyid_peso'>peso</span><span class='rbrace'>}</span> <span class='op'>/</span><span class='id identifier rubyid_granja'>granja</span><span class='period'>.</span><span class='id identifier rubyid_numero'>numero</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='op'>*</span> <span class='int'>100</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_round'>round</span><span class='lparen'>(</span><span class='int'>1</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='kw'>return</span> <span class='lparen'>(</span><span class='lparen'>(</span><span class='lparen'>(</span><span class='id identifier rubyid_granja'>granja</span><span class='period'>.</span><span class='id identifier rubyid_precio_venta'>precio_venta</span> <span class='op'>-</span> <span class='id identifier rubyid_granja'>granja</span><span class='period'>.</span><span class='id identifier rubyid_precio_unitario'>precio_unitario</span><span class='rparen'>)</span> <span class='op'>/</span> <span class='lparen'>(</span><span class='id identifier rubyid_granja'>granja</span><span class='period'>.</span><span class='id identifier rubyid_almacen'>almacen</span><span class='period'>.</span><span class='id identifier rubyid_sum'>sum</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_x'>x</span><span class='op'>|</span> <span class='id identifier rubyid_x'>x</span><span class='period'>.</span><span class='id identifier rubyid_edad'>edad</span><span class='rbrace'>}</span> <span class='op'>/</span><span class='id identifier rubyid_granja'>granja</span><span class='period'>.</span><span class='id identifier rubyid_numero'>numero</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='op'>*</span> <span class='int'>100</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_round'>round</span><span class='lparen'>(</span><span class='int'>1</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="bienestar-instance_method">
+  
+    #<strong>bienestar</strong>(granja, condiciones)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Metodo para procesar el bienestar del animal En caso de condiciones optima retorna 100 En caso contratio calculo el ratio</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/granja/funcion.rb', line 26</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_bienestar'>bienestar</span><span class='lparen'>(</span><span class='id identifier rubyid_granja'>granja</span><span class='comma'>,</span> <span class='id identifier rubyid_condiciones'>condiciones</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_max'>max</span> <span class='op'>=</span> <span class='id identifier rubyid_granja'>granja</span><span class='period'>.</span><span class='id identifier rubyid_almacen'>almacen</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_x'>x</span><span class='op'>|</span> <span class='id identifier rubyid_x'>x</span><span class='period'>.</span><span class='id identifier rubyid_peso'>peso</span> <span class='op'>/</span> <span class='id identifier rubyid_x'>x</span><span class='period'>.</span><span class='id identifier rubyid_edad'>edad</span><span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_max'>max</span>
+  <span class='id identifier rubyid_ratio'>ratio</span> <span class='op'>=</span> <span class='id identifier rubyid_granja'>granja</span><span class='period'>.</span><span class='id identifier rubyid_almacen'>almacen</span><span class='period'>.</span><span class='id identifier rubyid_sum'>sum</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_x'>x</span><span class='op'>|</span> <span class='id identifier rubyid_x'>x</span><span class='period'>.</span><span class='id identifier rubyid_peso'>peso</span><span class='op'>/</span><span class='id identifier rubyid_x'>x</span><span class='period'>.</span><span class='id identifier rubyid_edad'>edad</span><span class='rbrace'>}</span> <span class='op'>/</span> <span class='id identifier rubyid_granja'>granja</span><span class='period'>.</span><span class='id identifier rubyid_numero'>numero</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span>
+
+  <span class='kw'>if</span><span class='lparen'>(</span><span class='id identifier rubyid_condiciones'>condiciones</span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="#CONDICIONES_DE_VIDA-constant" title="Granja::Funcion::CONDICIONES_DE_VIDA (constant)">CONDICIONES_DE_VIDA</a></span></span><span class='rparen'>)</span>
+    <span class='kw'>return</span> <span class='lparen'>(</span><span class='lparen'>(</span><span class='id identifier rubyid_ratio'>ratio</span> <span class='op'>*</span> <span class='int'>100</span><span class='rparen'>)</span> <span class='op'>/</span> <span class='id identifier rubyid_max'>max</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_round'>round</span><span class='lparen'>(</span><span class='int'>1</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='kw'>return</span>  <span class='lparen'>(</span><span class='lparen'>(</span><span class='id identifier rubyid_ratio'>ratio</span> <span class='op'>*</span> <span class='int'>50</span><span class='rparen'>)</span> <span class='op'>/</span> <span class='id identifier rubyid_max'>max</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_round'>round</span><span class='lparen'>(</span><span class='int'>1</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="cuidados-instance_method">
   
     #<strong>cuidados</strong>(cantidad, lista)  &#x21d2; <tt>Object</tt> 
   
@@ -267,6 +511,171 @@
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cuidados'>cuidados</span><span class='lparen'>(</span><span class='id identifier rubyid_cantidad'>cantidad</span><span class='comma'>,</span> <span class='id identifier rubyid_lista'>lista</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_lista'>lista</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_item'>item</span><span class='op'>|</span> <span class='id identifier rubyid_item'>item</span> <span class='op'>+</span> <span class='id identifier rubyid_cantidad'>cantidad</span><span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="evalBeneficio-instance_method">
+  
+    #<strong>evalBeneficio</strong>(value)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Metodo para procesar Beneficio Devuelvo entero</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+68
+69
+70
+71
+72
+73
+74
+75
+76</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/granja/funcion.rb', line 68</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_evalBeneficio'>evalBeneficio</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_value'>value</span> <span class='op'>&lt;</span> <span class='int'>10</span> 
+    <span class='kw'>return</span> <span class='int'>1</span>
+  <span class='kw'>elsif</span> <span class='id identifier rubyid_value'>value</span> <span class='op'>&gt;</span> <span class='int'>50</span>
+    <span class='kw'>return</span> <span class='int'>3</span>
+  <span class='kw'>else</span>
+    <span class='kw'>return</span> <span class='int'>2</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="evalBienestar-instance_method">
+  
+    #<strong>evalBienestar</strong>(value)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Metodo para procesar bienestar Devuelve entero</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+56
+57
+58
+59
+60
+61
+62
+63
+64</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/granja/funcion.rb', line 56</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_evalBienestar'>evalBienestar</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_value'>value</span> <span class='op'>&lt;=</span> <span class='int'>20</span>
+    <span class='kw'>return</span> <span class='int'>1</span>
+  <span class='kw'>elsif</span> <span class='id identifier rubyid_value'>value</span> <span class='op'>&gt;=</span> <span class='int'>80</span>
+    <span class='kw'>return</span> <span class='int'>3</span>
+  <span class='kw'>else</span>
+    <span class='kw'>return</span> <span class='int'>2</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="indicador_productividad-instance_method">
+  
+    #<strong>indicador_productividad</strong>(granja, condiciones)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Metodo para procesar indice de productividad</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>media de evaluacion de 2 valores</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+50
+51
+52</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/granja/funcion.rb', line 50</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_indicador_productividad'>indicador_productividad</span><span class='lparen'>(</span><span class='id identifier rubyid_granja'>granja</span><span class='comma'>,</span> <span class='id identifier rubyid_condiciones'>condiciones</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='lparen'>(</span><span class='id identifier rubyid_evalBienestar'>evalBienestar</span><span class='lparen'>(</span><span class='id identifier rubyid_bienestar'>bienestar</span><span class='lparen'>(</span><span class='id identifier rubyid_granja'>granja</span><span class='comma'>,</span><span class='id identifier rubyid_condiciones'>condiciones</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='op'>+</span> <span class='id identifier rubyid_evalBeneficio'>evalBeneficio</span><span class='lparen'>(</span><span class='id identifier rubyid_beneficio_neto'>beneficio_neto</span><span class='lparen'>(</span><span class='id identifier rubyid_granja'>granja</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='op'>/</span> <span class='int'>2</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -327,7 +736,7 @@
 
 <span class='kw'>def</span> <span class='id identifier rubyid_reproduccion'>reproduccion</span><span class='lparen'>(</span><span class='id identifier rubyid_cantidad'>cantidad</span><span class='comma'>,</span> <span class='id identifier rubyid_lista'>lista</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_dias'>dias</span> <span class='op'>=</span> <span class='id identifier rubyid_cantidad'>cantidad</span> <span class='op'>*</span> <span class='int'>30</span>
-  <span class='id identifier rubyid_lista'>lista</span><span class='period'>.</span><span class='id identifier rubyid_select'>select</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_item'>item</span><span class='op'>|</span> <span class='id identifier rubyid_item'>item</span><span class='period'>.</span><span class='id identifier rubyid_edad'>edad</span> <span class='op'>&gt;</span> <span class='id identifier rubyid_dias'>dias</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_lista'>lista</span><span class='period'>.</span><span class='id identifier rubyid_select'>select</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_item'>item</span><span class='op'>|</span> <span class='id identifier rubyid_item'>item</span> <span class='op'>&gt;</span> <span class='id identifier rubyid_dias'>dias</span><span class='rbrace'>}</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -339,7 +748,7 @@
 </div>
 
       <div id="footer">
-  Generated on Wed Dec 15 15:58:57 2021 by
+  Generated on Tue Jan 18 17:12:43 2022 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-2.7.2).
 </div>

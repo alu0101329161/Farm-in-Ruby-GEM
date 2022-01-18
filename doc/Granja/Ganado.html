@@ -298,6 +298,30 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#>-instance_method" title="#&gt; (instance method)">#<strong>&gt;</strong>(other)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Metodo para comparar por cualquier valor.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(iden = 0, edad = 0, sexo = &quot;&quot;, peso = 0, raza = &quot;&quot;, apro = &quot;&quot;, ali = &quot;&quot;)  &#x21d2; Object </a>
     
 
@@ -632,12 +656,12 @@
       <pre class="lines">
 
 
-54
-55
-56</pre>
+64
+65
+66</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/granja/ganado.rb', line 54</span>
+      <pre class="code"><span class="info file"># File 'lib/granja/ganado.rb', line 64</span>
 
 <span class='kw'>def</span> <span class='op'>+</span> <span class='id identifier rubyid_other'>other</span>
     <span class='const'><span class='object_link'><a href="" title="Granja::Ganado (class)">Ganado</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Granja::Ganado#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='ivar'>@identificador</span><span class='comma'>,</span> <span class='ivar'>@edad</span><span class='comma'>,</span> <span class='ivar'>@sexo</span><span class='comma'>,</span> <span class='ivar'>@peso</span> <span class='op'>+</span> <span class='id identifier rubyid_other'>other</span><span class='comma'>,</span> <span class='ivar'>@raza</span><span class='comma'>,</span> <span class='ivar'>@aprovechamiento</span><span class='comma'>,</span> <span class='ivar'>@alimentacion</span><span class='rparen'>)</span>
@@ -750,15 +774,82 @@
       <pre class="lines">
 
 
+58
+59
+60</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/granja/ganado.rb', line 58</span>
+
+<span class='kw'>def</span> <span class='op'>==</span> <span class='id identifier rubyid_other'>other</span>
+    <span class='ivar'>@raza</span> <span class='op'>==</span> <span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_raza'>raza</span> <span class='op'>&amp;&amp;</span> <span class='ivar'>@aprovechamiento</span> <span class='op'>==</span> <span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_aprovechamiento'>aprovechamiento</span> <span class='op'>&amp;&amp;</span> <span class='ivar'>@alimentacion</span> <span class='op'>==</span> <span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_alimentacion'>alimentacion</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id=">-instance_method">
+  
+    #<strong>&gt;</strong>(other)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Metodo para comparar por cualquier valor</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>Bool</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
 48
 49
-50</pre>
+50
+51
+52
+53
+54</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/granja/ganado.rb', line 48</span>
 
-<span class='kw'>def</span> <span class='op'>==</span> <span class='id identifier rubyid_other'>other</span>
-    <span class='ivar'>@raza</span> <span class='op'>==</span> <span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_raza'>raza</span> <span class='op'>&amp;&amp;</span> <span class='ivar'>@aprovechamiento</span> <span class='op'>==</span> <span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_aprovechamiento'>aprovechamiento</span> <span class='op'>&amp;&amp;</span> <span class='ivar'>@alimentacion</span> <span class='op'>==</span> <span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_alimentacion'>alimentacion</span>
+<span class='kw'>def</span> <span class='op'>&gt;</span> <span class='id identifier rubyid_other'>other</span>
+    <span class='kw'>if</span><span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_instance_of?'>instance_of?</span> <span class='const'><span class='object_link'><a href="" title="Granja::Ganado (class)">Ganado</a></span></span><span class='rparen'>)</span>
+        <span class='ivar'>@edad</span> <span class='op'>&gt;</span> <span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_edad'>edad</span>
+    <span class='kw'>else</span>
+        <span class='ivar'>@edad</span> <span class='op'>&gt;</span> <span class='id identifier rubyid_other'>other</span>
+    <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -829,7 +920,7 @@
 </div>
 
       <div id="footer">
-  Generated on Wed Dec 15 15:58:57 2021 by
+  Generated on Tue Jan 18 17:12:44 2022 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-2.7.2).
 </div>
