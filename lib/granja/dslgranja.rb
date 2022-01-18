@@ -4,6 +4,8 @@ module Granja
 
         attr_reader :datos, :animales
 
+        # Constructor de la clase DSLGranja
+        # @note se aceptan un identificador y un bloque
         def initialize(identificador = nil, &block)
             @datos = [identificador]
             @animales = []
@@ -17,6 +19,7 @@ module Granja
             end
         end
 
+        # Recoger los datos
         def ejemplar(identificacion, options = {})
             ejemplar = []
             ejemplar << identificacion
@@ -28,12 +31,14 @@ module Granja
             @animales << ejemplar
         end
 
+        # Recoger los datos
         def dato(text, options = {})
             @datos << text
             @datos << options[:descripcion] if options[:descripcion]
             @datos << options[:tipo] if options[:tipo]
         end
 
+        # Cadena formateada
         def to_s
             output = "La granja de identificacion #{@datos[0]} , con los datos de nombre #{@datos[1]}, descripcion #{@datos[2]} y tipo #{@datos[3]}\n\n"
             output << "Tiene los siguientes ejemplares: \n\n"
@@ -44,5 +49,6 @@ module Granja
         
             return output
         end
+        
     end
 end
