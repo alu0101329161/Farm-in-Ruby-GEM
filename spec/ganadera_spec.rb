@@ -223,18 +223,18 @@ RSpec.describe Granja do
                 expect(@granja_porcinos.bienestar(@granja_porcinos,Granja::Funcion::CONDICIONES_DE_VIDA1)).to eq(50)
             end 
             it "Beneficio Neto" do
-                expect(@granja_bovinos.beneficio_neto(@granja_bovinos)).to eq(5002.2)
-                expect(@granja_ovinos.beneficio_neto(@granja_ovinos)).to eq(5102.1)
-                expect(@granja_caprinos.beneficio_neto(@granja_caprinos)).to eq(5229.0)
-                expect(@granja_porcinos.beneficio_neto(@granja_porcinos)).to eq(5339.4)
+                expect(@granja_bovinos.beneficio_neto(@granja_bovinos)).to eq(0.0)
+                expect(@granja_ovinos.beneficio_neto(@granja_ovinos)).to eq(0.0)
+                expect(@granja_caprinos.beneficio_neto(@granja_caprinos)).to eq(0.0)
+                expect(@granja_porcinos.beneficio_neto(@granja_porcinos)).to eq(0.0)
             end
             it "Indicador productividad" do
-                expect(@granja_ovinos.indicador_productividad(@granja_ovinos,Granja::Funcion::CONDICIONES_DE_VIDA)).to eq(3)
-                expect(@granja_ovinos.indicador_productividad(@granja_ovinos,Granja::Funcion::CONDICIONES_DE_VIDA1)).to eq(2)
-                expect(@granja_caprinos.indicador_productividad(@granja_caprinos,Granja::Funcion::CONDICIONES_DE_VIDA)).to eq(3)
-                expect(@granja_caprinos.indicador_productividad(@granja_caprinos,Granja::Funcion::CONDICIONES_DE_VIDA1)).to eq(2)
-                expect(@granja_porcinos.indicador_productividad(@granja_porcinos,Granja::Funcion::CONDICIONES_DE_VIDA)).to eq(3)
-                expect(@granja_porcinos.indicador_productividad(@granja_porcinos,Granja::Funcion::CONDICIONES_DE_VIDA1)).to eq(2)
+                expect(@granja_ovinos.indicador_productividad(@granja_ovinos,Granja::Funcion::CONDICIONES_DE_VIDA)).to eq(2)
+                expect(@granja_ovinos.indicador_productividad(@granja_ovinos,Granja::Funcion::CONDICIONES_DE_VIDA1)).to eq(1)
+                expect(@granja_caprinos.indicador_productividad(@granja_caprinos,Granja::Funcion::CONDICIONES_DE_VIDA)).to eq(2)
+                expect(@granja_caprinos.indicador_productividad(@granja_caprinos,Granja::Funcion::CONDICIONES_DE_VIDA1)).to eq(1)
+                expect(@granja_porcinos.indicador_productividad(@granja_porcinos,Granja::Funcion::CONDICIONES_DE_VIDA)).to eq(2)
+                expect(@granja_porcinos.indicador_productividad(@granja_porcinos,Granja::Funcion::CONDICIONES_DE_VIDA1)).to eq(1)
             end
         end
 

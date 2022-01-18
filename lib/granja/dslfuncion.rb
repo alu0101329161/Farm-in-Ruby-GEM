@@ -2,7 +2,7 @@
 module Granja
     class DSLFuncionalidad
 
-        attr_reader :identificador, :bienestar, :beneficio, :productividad
+        attr_reader :identificador, :bienestar_animal, :beneficio_animal, :productividad_animal
 
         def initialize(identificador = nil, &block)
             @identificador = identificador
@@ -20,49 +20,15 @@ module Granja
         end
 
         def beneficio(granja, options = {})
-            medio = granja.animales.sum{|x| x[4] - x[3]} /granja.animales.length
-            peso = granja.animales.sum{|x| x[2]} / granja.animales.length.to_f
-            @beneficio_animal = ((medio / peso)* 100).round(2)
+          @beneficio_animal = granja.beneficio_neto(granja)
         end
 
         def bienestar(granja, options = {})
-            max = granja.animales.collect{|x| x[2] / x[1]}.max
-            ratio = granja.animales.sum{|x| x[2] / x[1]} / granja.animales.length
-            if options[:condiciones] == :campo
-                @bienestar_animal = ((ratio * 100) / max).round(1)
-            else
-                @bienestar_animal = ((ratio * 50) / max).round(1)
-            end
+          @bienestar_animal = granja.bienestar(granja,options[:condiciones])
         end
 
         def productividad(granja, options = {})
-            value_bienestar = bienestar(granja, options)
-            value_beneficio = beneficio(granja)
-
-            @productividad_animal = ((evalBienestar(value_bienestar) + evalBeneficio(value_beneficio)) / 2).ceil
-
-        end
-
-        def evalBienestar(value)
-            if value <= 20
-              return 1
-            elsif value >= 80
-              return 3
-            else
-              return 2
-            end
-        end
-      
-          # Metodo para procesar Beneficio
-          # Devuelvo entero 
-        def evalBeneficio(value)
-            if value < 10 
-              return 1
-            elsif value > 50
-              return 3
-            else
-              return 2
-            end
+          @productividad_animal = granja.indicador_productividad(granja,options[:condiciones])
         end
 
         def to_s
