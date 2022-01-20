@@ -14,7 +14,7 @@ module Granja
                 if block.arity == 1
                     yield self
                 else
-                instance_eval(&block) 
+                    instance_eval(&block) 
                 end
             end
         end
@@ -49,6 +49,6 @@ module Granja
         
             return output
         end
-        
+
     end
 end

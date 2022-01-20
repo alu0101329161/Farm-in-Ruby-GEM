@@ -7,10 +7,9 @@ RSpec.describe Granja do
             caprino1 = Granja::Ganado.new("3333",287,:hembra,5000.04,:caprino,:carne,:herbívoro)
             caprino2 = Granja::Ganado.new("4444",287,:macho,5000.07,:caprino,:carne,:herbívoro)
             ovino1 = Granja::Ganado.new("3333",890,:hembra,700.03,:ovino,:leche,:herbívoro)
-
             ovino2 = Granja::Ganado.new("3333",100,:hembra,700.03,:ovino,:leche,:herbívoro)
+            
             granja_1 = Granja::Ganadera.new(2,"Granja de ovinos","Ovinos muertos",:ovino,:leche,1,1.2,100.2,[ovino2])
-
             granja_2 = Granja::Ganadera.new(2,"Granja de ovinos","Ovinos muertos",:ovino,:leche,2,51.2,530.2, [ovino1])
             granja_3 = Granja::Ganadera.new(3,"Granja de caprinos","Caprinos muertos",:caprino,:sacrificio,2,52.3,520.3, [caprino1, caprino2])
 
